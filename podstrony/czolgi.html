@@ -1,0 +1,1162 @@
+
+
+<!doctype html>
+<html lang="en" class="h-100">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>War Tanks</title>
+      <!-- Bootstrap core CSS -->
+      <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Custom styles for this template -->
+      <link href="../css/sticky-footer.css" rel="stylesheet">
+      <link href="../css/carousel.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>
+         .slider {
+         -webkit-appearance: none;
+         width: 100%;
+         height: 15px;
+         border-radius: 5px;  
+         background: #ffffff;
+         outline: none;
+         opacity: 0.7;
+         -webkit-transition: .2s;
+         transition: opacity .2s;
+         }
+         .slider::-webkit-slider-thumb {
+         -webkit-appearance: none;
+         appearance: none;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%; 
+         background: #ffffff;
+         cursor: pointer;
+         }
+         .slider::-moz-range-thumb {
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background: #343a40;
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body class="d-flex flex-column h-100" onload="playAudio()">
+      <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="../index.html">War Tanks</a>
+            <div class="navbar-nav mr-auto">
+            </div>
+            <div class="form-inline">
+               <audio id="myAudio">
+                  <source src="../muzyka/himmelsdorf.mp3" type="audio/mpeg">
+               </audio>
+               <form class="form-inline mt-2 mt-md-0">
+                  <i class="material-icons text-white" id="wlacz" onclick = "zmienStan()">volume_up</i>
+                  <i class="material-icons text-white" id="status" onclick = "zmienStatus()">pause_circle_outline</i>
+                  <div class="slidecontainer">
+                     <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onmousemove="zmienAudio()">
+                  </div>
+               </form>
+               <script>
+                  function zmienAudio()
+                  {
+                  	var slider = document.getElementById("myRange").value/100;
+                  
+                  	x.volume = slider;
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  	
+                  }
+                  	 
+                  var x = document.getElementById("myAudio"); 
+                  function playAudio() { 
+                  
+                    x.play(); 
+                  } 
+                  
+                  function zmienStatus(){
+                  
+                  	if (x.duration > 0 && !x.paused) {
+                  
+                      x.pause();
+                  	document.getElementById("status").innerHTML = "play_circle_outline";
+                  
+                  } else {
+                  
+                      x.play();
+                  	document.getElementById("status").innerHTML = "pause_circle_outline";
+                  	
+                  
+                  }
+                  }
+                  
+                  function zmienStan(){
+                  
+                  	if (x.volume >0) {
+                  
+                      x.volume = 0;
+                  	document.getElementById("wlacz").innerHTML = "volume_off";
+                  
+                  } else {
+                  
+                  	zmienAudio();
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  
+                  }
+                  }
+                  
+                  
+                  
+                  
+                  
+                                 
+               </script>
+            </div>
+         </nav>
+      </header>
+      <main role="main">
+         <div class="container marketing">
+            <br>
+            <div class="card text-center">
+               <div class="card-header">
+                  <b>
+                     Pojazdy pancerne II wojny światowej
+               </div>
+               <div class="card-body">
+               <p class="card-text">Wybierz jeden z podrozdziałów:</p>
+               <a class="btn btn btn-outline-secondary rounded" href="#czolgiNiemieckie"><b>Maszyny niemieckie</b></a>
+               <a class="btn btn btn-outline-secondary rounded" href="#czolgiRadzieckie"><b>Maszyny radzieckie</b></a>
+               <a class="btn btn btn-outline-secondary rounded" href="#czolgiAmerykanskie"><b>Maszyny amerykańskie</b></a>
+               </div>
+               </b>
+            </div>
+            <hr class="featurette-divider" id="czolgiNiemieckie">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Panzerkampfwagen IV</h2>
+                  <p class="lead">
+                     Niemiecki czołg średni z okresu II wojny światowej. Przez kilka miesięcy był najlepszym czołgiem państw Osi i jedynym, który mógł nawiązać równorzędną walkę z wozami alianckimi. Mimo pojawienia się cięższych maszyn, nigdy nie został przez nie wyparty z dywizji pancernych i do końca wojny był podstawowym czołgiem niemieckim.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/panzer_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-xl">
+                  <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Panzerkampfwagen IV</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/panzer_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w działo kalibru 75 mm, miał służyć jako wsparcie lżejszych wozów głównie w starciu z nieprzyjacielską piechotą.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -106mm dla pocisku przeciwpancernego,<br>
+                     -143mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafił rozpędzić się do 40 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/panzer_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x2">
+                  <div class="modal fade bd-example-modal-x2" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/panzer_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Niemiecki czołg z racji swojej wagi nie mógł być zbytnie obciążony grubym pancerzem. Wartości grubości pancerze przedstawiają się następująco:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>50</td>
+                           <td>30</td>
+                           <td>10</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>50+30</td>
+                           <td>30</td>
+                           <td>20</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>50+30</td>
+                           <td>30</td>
+                           <td>20</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/panzer_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x3">
+                  <div class="modal fade bd-example-modal-x3" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/panzer_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Panzerkampfwagen V Panther</h2>
+                  <p class="lead">
+                     Niemiecki czołg średni wprowadzono do służby w 1943 roku jako bezpośrednią odpowiedź na radziecki czołg średni T-34. Pantera miała jednak lepsze działo i znacznie grubszy pancerz. <br>
+                     W walce bezpośredniej Pantery były zdecydowanie bardziej zaawansowane technicznie niż PzKpfw IV, do końca wojny służyły jako podstawowy wóz armii niemieckiej.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/pantera_mala_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x4">
+                  <div class="modal fade bd-example-modal-x4" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Panzerkampfwagen V Panther</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pantera_duza_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w działo kalibru 75 mm, z takim uzbrojeniem pantera mogła bezproblemowo nawiązywać walkę z czołgami przeciwnika.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -140mm dla pocisku przeciwpancernego,<br>
+                     -210mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafiła rozpędzić się do 46 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/pantera_mala_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x5">
+                  <div class="modal fade bd-example-modal-x5" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pantera_duza_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Lepsze parametry techniczne pozwoliły na zdecydowanie grubszy pancerz:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>100</td>
+                           <td>45</td>
+                           <td>45</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>80</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>65</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/pantera_mala_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x6">
+                  <div class="modal fade bd-example-modal-x6" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pantera_duza_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Panzerkampfwagen VI Tiger</h2>
+                  <p class="lead">
+                     Niemiecki czołg ciężki armii III rzeczy. Czołg został stworzony jako odpowiedź na ulepszoną wersję radzieckiego czołgu t-34/76. Tygrys uważany jest za jeden z najskuteczniejszych czołgów II wojny światowej.
+                     <br>Potężny pancerz oraz armata dużego kalibru czyniły z niego niezwykle groźnego przeciwnika.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/tygrys_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x7">
+                  <div class="modal fade bd-example-modal-x7" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Panzerkampfwagen VI Tiger</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/tygrys_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w działo kalibru 88 mm, ta armata okazała się niezwykle skteczna przeciwko wrogim czołgom. Tygrys mógł efetkywnie niszczyć każdy pojazd nieprzyjaciela nawet z dużego zasięgu.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -120mm dla pocisku przeciwpancernego,<br>
+                     -171mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafiła rozpędzić się do 38 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/tygrys_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x8">
+                  <div class="modal fade bd-example-modal-x8" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/tygrys_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Lepsze parametry techniczne pozwoliły na zdecydowanie grubszy pancerz:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>100</td>
+                           <td>80</td>
+                           <td>80</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>100</td>
+                           <td>80</td>
+                           <td>80</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>100</td>
+                           <td>80</td>
+                           <td>80</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/tygrys_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x9">
+                  <div class="modal fade bd-example-modal-x9" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/tygrys_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider"  id="czolgiRadzieckie">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>T-34-85</h2>
+                  <p class="lead">
+                     Rosyjski czołg średni z okresu II wojny światowej. Czołg powstał jako odpowiedź na rosnące zagrożenie ze strony coraz silniejszych maszyn niemieckich. Dowództwo rosyjskie doszło do wniosku że czołg t-34 należy zmodernizować pod każdym względem. Ulepszono armatę, pancerz oraz mobilność maszyny.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/t34_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-xl0">
+                  <div class="modal fade bd-example-modal-xl0" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">T-34-85</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/t34_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     W czołgu zostało zamontowane działo 85mm, armata sprawdziła się efektywnie w walce pancernej.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -124mm dla pocisku przeciwpancernego,<br>
+                     -148mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafił rozpędzić się do 60 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/t34_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x11">
+                  <div class="modal fade bd-example-modal-x11" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/t34_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Czołg musiał pozostać mobilny - dlatego pancerz przestawiał się nastepująco:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>90</td>
+                           <td>75</td>
+                           <td>75</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>75</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>75</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/t34_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x12">
+                  <div class="modal fade bd-example-modal-x12" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/t34_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>KW-1</h2>
+                  <p class="lead">
+                     Radziecki czołg cięzki z początku. Czołg dzięki małym rozmiarom mógł zostać wyposażony w niezwykle gruby pancerz. W tym okresie jest przedni pacerz był praktycznie nie przebijalny.
+                     <br>					 Jest to jeden z radzieckich czołgów przewyższających konstrukcje niemieckie z początkowego okresu wojny. 
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/kw_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x13">
+                  <div class="modal fade bd-example-modal-x13" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">KW - 1</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/kw_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w działo kalibru 76,2 mm, pomimo trudności w obsłudze czołgu celność działa była wyjątkowo zadowlająca.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -72mm dla pocisku przeciwpancernego,<br>
+                     -88mm dla pocisku podkalibrowego.<br>
+                     Na płaskim dogodnym terenie czołg potrafił osiągnąć 38 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/kw_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x14">
+                  <div class="modal fade bd-example-modal-x14" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/kw_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Czołg posiadał potężny pancerz - niestety okupił to swoją mobilnością.
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>110</td>
+                           <td>110</td>
+                           <td>110</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>75</td>
+                           <td>75</td>
+                           <td>75</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>75</td>
+                           <td>75</td>
+                           <td>75</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/kw_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x15">
+                  <div class="modal fade bd-example-modal-x15" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/kw_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>IS - 2</h2>
+                  <p class="lead">
+                     Wraz z postepem wojny, konieczne było zaprojektowanie czołgu który odeprze coraz to cięższe czołgi przeciwnika.<br> Taką maszyną był ciężki czołg IS-2, swoją konstrukcją przewyższał praktycznie każdy napotkany wrogi pojazd.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/is_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x16">
+                  <div class="modal fade bd-example-modal-x16" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">IS - 2</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/is_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w imponujące działo kalibru 122 mm, wystrzelone pociski siały całkowit zniszczenie nawet z dużej odległości.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -160mm dla pocisku przeciwpancernego,<br>
+                     -210mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafił rozpędzić się do 37 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/is_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x17">
+                  <div class="modal fade bd-example-modal-x17" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/is_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Dzięki zmniejszonej wadze pojazdu pancerz mógł pozostać grubszy:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>100</td>
+                           <td>90</td>
+                           <td>90</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>120</td>
+                           <td>100</td>
+                           <td>60</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>100</td>
+                           <td>90</td>
+                           <td>60</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/is_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x18">
+                  <div class="modal fade bd-example-modal-x18" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/is_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider"  id="czolgiAmerykanskie">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>M4 Sherman</h2>
+                  <p class="lead">
+                     Amerykański czołg średni z początkowej fazy II wojny światowej. Czołg wyprodukwoany w wielkich ilościach, był podstawową maszyną pancerną wykorzystywaną w tym okresie przez amerykanów.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/sherman_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-xl9">
+                  <div class="modal fade bd-example-modal-xl9" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">M4 Sherman</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/sherman_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg wyposażony był w działo kalibru 75 mm, czołg miał za zadanie wspierać szybko przemieszającą się piechotę - taka armata idealnie się w tym sprawdziła.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -78mm dla pocisku przeciwpancernego,<br>
+                     -111mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafił rozpędzić się do 39 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/sherman_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x20">
+                  <div class="modal fade bd-example-modal-x20" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/sherman_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     Amrykański czołg miał sotsunkowo wzmocniony pancerz, jednak przełożyło się to na zmniejszone możliwości terenowe.
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>80</td>
+                           <td>50</td>
+                           <td>50</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>60</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>50</td>
+                           <td>40</td>
+                           <td>40</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/sherman_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x21">
+                  <div class="modal fade bd-example-modal-x21" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/sherman_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>M26 Pershing</h2>
+                  <p class="lead">
+                     Czołg został stworzony po sukcesach w zwalczaniu czołgów alianckich odniesionych przez niemieckie pojazdy z działami 88mm.<br> Technicznie był odpowiednikiem niemieckiej pantery - wartości bojowe były bardzo zbliżone.
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/pers_maly_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x22">
+                  <div class="modal fade bd-example-modal-x22" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">M26 Pershing</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pers_duzy_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette">
+               <div class="col-md-7 order-md-2">
+                  <h2>Parametry techniczne</h2>
+                  <p class="lead">
+                     Czołg został wyposażony był w działo kalibru 90 mm, z tak imponującą armatą, M26 był w stanie zagrozić więkoszści pojazdów napotkanych na polu bitwy.<br>
+                     Efektywna penetracja standardowym pociskiem przy odległości 100 metrów i kącie pancerza równym 30º, wynosiła:
+                     <br>
+                     -150mm dla pocisku przeciwpancernego,<br>
+                     -225mm dla pocisku podkalibrowego.<br>
+                     Na płaskim terenie potrafiła rozpędzić się do 48 km/h.
+                  </p>
+               </div>
+               <div class="col-md-5 order-md-1">
+                  <img src="../zdjecia/pers_maly_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x23">
+                  <div class="modal fade bd-example-modal-x23" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Parametry techniczne</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pers_duzy_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <div class="row featurette" >
+               <div class="col-md-7" >
+                  <h2>Opancerzenie</h2>
+                  <p class="lead">
+                     M26 z powodu swojej wagi został zakwalifikowany jako czołg średni - co też przełożyło się na jego pancerz:
+                  <table class="table text-secondary">
+                     <thead>
+                        <tr>
+                           <th scope="col">#</th>
+                           <th scope="col">Przód</th>
+                           <th scope="col">Boki</th>
+                           <th scope="col">Tył</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <th scope="row">Wieża</th>
+                           <td>111</td>
+                           <td>76</td>
+                           <td>76</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Górny kadłub</th>
+                           <td>101</td>
+                           <td>76</td>
+                           <td>40</td>
+                        </tr>
+                        <tr>
+                           <th scope="row">Dolny kadłub</th>
+                           <td>76</td>
+                           <td>76</td>
+                           <td>40</td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  </p>
+               </div>
+               <div class="col-md-5">
+                  <img src="../zdjecia/pers_maly_3.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x24">
+                  <div class="modal fade bd-example-modal-x24" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-xl">
+                        <div class="modal-content">
+                           <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Opancerzenie</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                           </div>
+                           <div class="modal-body">
+                              <img src="../zdjecia/pers_duzy_3.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                           </div>
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <hr class="featurette-divider">
+            <hr class="featurette-divider">
+         </div>
+      </main>
+      <footer class="footer mt-auto py-3">
+         <div class="container">
+            <div class="d-flex justify-content-between">
+               <div class="p-2 bd-highlight"><a href="../index.html" style="text-decoration: none;" class="text-secondary"><- Powrót</a></div>
+               <div class="p-2 bd-highlight">War Tanks - projekt zaliczeniowy Multimedia rok 2018/2019 Lipiński Mateusz</div>
+               <div class="p-2 bd-highlight"><a href="bitwy.html" style="text-decoration: none;" class="text-secondary">Następna strona -></a></div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
+
