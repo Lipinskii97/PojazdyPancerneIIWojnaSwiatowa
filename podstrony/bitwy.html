@@ -1,0 +1,643 @@
+
+
+<!doctype html>
+<html lang="en" class="h-100">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>War Tanks</title>
+      <!-- Bootstrap core CSS -->
+      <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Custom styles for this template -->
+      <link href="../css/sticky-footer.css" rel="stylesheet">
+      <link href="../css/carousel.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <style>
+         .slider {
+         -webkit-appearance: none;
+         width: 100%;
+         height: 15px;
+         border-radius: 5px;  
+         background: #ffffff;
+         outline: none;
+         opacity: 0.7;
+         -webkit-transition: .2s;
+         transition: opacity .2s;
+         }
+         .slider::-webkit-slider-thumb {
+         -webkit-appearance: none;
+         appearance: none;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%; 
+         background: #ffffff;
+         cursor: pointer;
+         }
+         .slider::-moz-range-thumb {
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background: #343a40;
+         cursor: pointer;
+         }
+      </style>
+   </head>
+   <body class="d-flex flex-column h-100" onload="playAudio()">
+      <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="../index.html">War Tanks</a>
+            <div class="navbar-nav mr-auto">
+            </div>
+            <div class="form-inline">
+               <audio id="myAudio">
+                  <source src="../muzyka/tundra.mp3" type="audio/mpeg">
+               </audio>
+               <form class="form-inline mt-2 mt-md-0">
+                  <i class="material-icons text-white" id="wlacz" onclick = "zmienStan()">volume_up</i>
+                  <i class="material-icons text-white" id="status" onclick = "zmienStatus()">pause_circle_outline</i>
+                  <div class="slidecontainer">
+                     <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onmousemove="zmienAudio()">
+                  </div>
+               </form>
+               <script>
+                  function zmienAudio()
+                  {
+                  	var slider = document.getElementById("myRange").value/100;
+                  
+                  	x.volume = slider;
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  	
+                  }
+                  	 
+                  var x = document.getElementById("myAudio"); 
+                  function playAudio() { 
+                  
+                    x.play(); 
+                  } 
+                  
+                  function zmienStatus(){
+                  
+                  	if (x.duration > 0 && !x.paused) {
+                  
+                      x.pause();
+                  	document.getElementById("status").innerHTML = "play_circle_outline";
+                  
+                  } else {
+                  
+                      x.play();
+                  	document.getElementById("status").innerHTML = "pause_circle_outline";
+                  	
+                  
+                  }
+                  }
+                  
+                  function zmienStan(){
+                  
+                  	if (x.volume >0) {
+                  
+                      x.volume = 0;
+                  	document.getElementById("wlacz").innerHTML = "volume_off";
+                  
+                  } else {
+                  
+                  	zmienAudio();
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  
+                  }
+                  }
+                  
+                  
+                  
+                  
+                  
+                                 
+               </script>
+            </div>
+         </nav>
+      </header>
+      <main role="main">
+         <div class="container marketing">
+            <br>
+            <div class="accordion" id="accordionBottom1">
+               <div class="card">
+                  <div class = "text-center">
+                     <div class="card-header" id="headingBottomOne">
+                        <h5 class="mb-0">
+                           <button class="btn btn-link text-secondary text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseBottomOne" aria-expanded="true" aria-controls="collapseBottomOne">
+                           <b> Bitwa na Łuku Kurskim</b>
+                           </button>
+                        </h5>
+                     </div>
+                  </div>
+                  <div id="collapseBottomOne" class="collapse" aria-labelledby="headingBottomOne" data-parent="#accordionBottom1">
+                     <div class="card-body">
+                        <div class="card text-center">
+                           <div class="card-body">
+                              <img src="../zdjecia/bitwa_kursk_2_mala.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x1">
+                              <div class="modal fade bd-example-modal-x1" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                 <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Bitwa na łuku kurskim</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                          </button>
+                                       </div>
+                                       <div class="modal-body">
+                                          <img src="../zdjecia/bitwa_kursk_2_duza.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="text-left">
+                                 <br>
+                                 Bitwa stoczona między siłami niemieckimi a radzieckimi na froncie wschodnim podczas II wojny światowej niedaleko miasta Kursk między 5 lipca a 23 sierpnia 1943 roku.<br> 
+                                 Niemiecka ofensywa otrzymała kryptonim „Cytadela” i doprowadziła do największej bitwy pancernej w dziejach świata, bitwy pod Prochorowką. <br>
+                                 Była to ostatnia niemiecka strategiczna operacja ofensywna na froncie wschodnim. Zwycięstwo w tej bitwie oddało inicjatywę strategiczną w ręce Armii Czerwonej do końca wojny.<br>
+                                 W bitwie pod Kurskiem po raz pierwszy w II wojnie światowej udało się powstrzymać niemiecką strategiczną ofensywę, zanim przerwała ona linie obronne i weszła głęboko w przestrzeń operacyjną. <br> 
+                                 Na północy niemieckie uderzenie weszło maksymalnie na 10–12, a na południu 35 kilometrów w głąb terenów wroga. <br>
+                                 Operacje ofensywne Armii Czerwonej po tej bitwie były jej pierwszymi udanymi letnimi operacjami strategicznymi podczas wielkiej wojny. <br><br>
+                              </div>
+                              <div class="accordion" id="accordionMain">
+                                 <div class="card">
+                                    <div class="card-header" id="headingMainOne">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseMainOne" aria-expanded="true" aria-controls="collapseMainOne">
+                                          Przebieg bitwy
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseMainOne" class="collapse" aria-labelledby="headingMainOne" data-parent="#accordionMain">
+                                       <div class="card-body">
+                                          <div class= "text-left">
+                                             <img src="../zdjecia/kursk_przebieg_maly.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x2">
+                                             <div class="modal fade bd-example-modal-x2" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl">
+                                                   <div class="modal-content">
+                                                      <div class="modal-header">
+                                                         <h5 class="modal-title" id="exampleModalLabel">Bitwa na Łuku Kurskim</h5>
+                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                         <span aria-hidden="true">&times;</span>
+                                                         </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                         <img src="../zdjecia/kursk_przebieg_duzy.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <b>Przebieg walk</b><br><br>
+                                             Armia niemiecka wiosna 1943 roku miała do wyboru dwie możliwości: wojnę pozycyjna, albo ograniczone działania ofensywne. Pierwsza opcja była nie do przyjęcia dla Hitlera. W drugiej możliwa była jedynie ofensywa na wybranym i stosunkowo wąskim odcinku frontu. Na więcej brakowało sil i środków. I tej koncepcji Hitler trzymał się z uporem. Sadził, ze dobrze przygotowana ofensywa pozwoli na pokonanie przeciwnika przy stosunkowo niewielkich stratach i umożliwi przejecie inicjatywy. Do takiej koncepcji idealnie nadawał się występ kurski. Początkowo Niemcy zastanawiali się, czy podjąć atak na luk kurski od południa, czy może czekać, aż Rosjanie uderza na ich dobrze umocnione linie obronne, co powinno wykrwawić napastników. I wtedy nastąpiłby silny niemiecki kontratak. <br>
+                                             Była też i koncepcja druga, która popierał szef sztabu generalnego wojsk lądowych Kurt Zeitzler. Polegała ona na przeprowadzeniu jednoczesnych zbieżnych ataków oskrzydlających z północy i z południa, które miały doprowadzić do okrążenia znajdujących się w wybrzuszeniu jednostek Armii Czerwonej i całkowitego zniszczenia ich w powstałym kotle. <br>
+                                             Powodzenie całej akcji miało zapewnić skierowanie w rejon walk aż ⅔ jednostek pancernych zaangażowanych na froncie wschodnim. Chociaż część wyższych rangą dowódców Wehrmachtu (m.in. gen. Heinz Guderian, gen. Alfred Jodl) uważała, że tak duża operacja zaczepna jest bardzo ryzykowna, 15 kwietnia 1943 roku Hitler rozkazem operacyjnym nr 6 zatwierdził plan wspomnianej operacji, której nadano kryptonim „Cytadela” <br>
+                                             Znaczenie tej bitwy było tak wielkie, ze OKW i OKH przewidywały, ze, jeżeli nowa niemiecka ofensywa letnia nie powiedzie się, będzie to oznaczało przegrana dla Niemców na froncie wschodnim i być może w całej wojnie. <br>
+                                             Do wykonania operacji „Cytadela” wyznaczono większość wojsk Grupy Armii „Środek” i Grupy Armii „Południe”. Utworzono z nich trzy grupy uderzeniowe o dużej mobilności. Na północy 9. Armia Grupy Armii „Środek” gen. Walthera Modela, wzmocniona silnymi – jak na ówczesne możliwości Wehrmachtu – jednostkami pancernymi, miała uderzyć z rejonu Orła przez Ponyry na Kursk. W tym samym czasie na południu 4. Armia Pancerna gen. Hermanna Hotha, wspierana na prawej flance przez Grupę Operacyjną „Kempf” gen. Wernera Kempfa, Grupy Armii „Południe” miały nacierać z linii Biełgorod – Tomarowka w kierunku północnym przez Obojań na Kursk. <br>
+                                             Początkowo planowano rozpoczęcie operacji w dniach 10–15 maja, ale utrzymanie tego terminu było ze względów organizacyjnych niemożliwe, głównie z powodu trudności ze skompletowaniem stanu osobowego Grupy Armii „Południe”. Termin przekładał też sam Hitler, licząc na dostawy większej liczby czołgów nowego typu, w których pokładał wielkie nadzieje. <br>
+                                             Rozpoczęcie operacji przesunięto na początek czerwca. Ostatecznie zdecydowano się zacząć na początku lipca. Przed operacją przeznaczone do niej wojska otrzymały 147 Tygrysów, 200 Panter i 89 ciężkich niszczycieli czołgów Ferdinand. <br>
+                                             Atakujące z północy siły Grupy Armii „Środek” liczyły 460 tys. żołnierzy, ok. 6 tys. dział i moździerzy, a także 1200 czołgów i dział szturmowych, zaś atakujące z południa siły Grupy Armii „Południe” liczyły 440 tys. ludzi, 4 tys. dział i moździerzy oraz 1500 czołgów. Grupę Armii „Środek” wspierała 6. Flota Powietrzna Luftwaffe, a Grupę Armii „Południe” 4. Flota Powietrzna Luftwaffe. Armia niemiecka liczyła w sumie 900 tys. żołnierzy, 10 tys. dział i moździerzy, 2,7 tys. czołgów i 2050 samolotów, co stanowiło ⅔ niemieckich sił powietrznych na froncie wschodnim. <br>
+                                             Po raz pierwszy w czasie wojny strona radziecka miała doskonale rozeznanie na temat zamiarów przeciwnika. Dzięki temu Rosjanie mogli starannie przygotować swoje przeciwdziałanie. Ponadto dostali na to dużo czasu. <br>
+                                             Rosjanie, podobnie jak Niemcy, również mieli dwie odmienne koncepcje rozstrzygnięcia kampanii letniej. Dowódca Frontu Woroneskiego gen. Nikołaj Watutin i członek rady wojennej tego frontu Nikita Chruszczow byli zwolennikami uderzenia wyprzedzającego i rozbicia przeciwnika na pozycjach wyjściowych, a następnie szybkiego marszu w kierunku Dniepru. Domagali się zatem wzmocnienia frontu dwiema armiami i rozpoczęcia ofensywy w końcu maja. Działania takie popierał też marsz. Aleksandr Wasilewski. Drugi wariant, defensywny, przewidywał utworzenie głęboko urzutowanej obrony wspieranej przez znaczne siły artylerii i opartej na rozbudowanych polach minowych. Po wyczerpaniu atakujących do akcji miały wejść siły rezerwowe frontów, które rozstrzygnęłyby bitwę. Były to więc niemal lustrzane odbicia pierwotnych zamysłów niemieckich dowódców. Zwolennikiem opcji defensywnej był marsz. Gieorgij Żukow, który pierwszy wariant uznał za zbyt ryzykowny i powtarzający błędy z ubiegłego roku. Stanowisko Żukowa poparł Stalin, co oznaczało, że należy szykować się do obrony. <br>
+                                             Nastawiono się przede wszystkim na wzmocnienie artylerii. Większość sprzętu artyleryjskiego stanowiły nowoczesne typy dział i moździerzy, równorzędne z niemieckimi lub nawet lepsze. Artylerię przeciwpancerną tworzyły głównie działa kalibru 76,2 mm oraz dysponujące dużą siłą przebicia działa 57 mm. Stare działa 45 mm zastąpiono nowymi z dłuższą lufą. Ponadto Rosjanie opanowali produkcję pocisków podkalibrowych. W celu zwalczania pojazdów pancernych wprowadzono specjalną amunicję do dział przeciwlotniczych 37 mm, armat dalekosiężnych 122 i 152 mm oraz haubicoarmat 152 mm. Zmobilizowano też wszystkie zdobyte wcześniej niemieckie działa przeciwpancerne 50 i 75 mm oraz przeciwlotnicze 88 mm. Jednocześnie szkolono oddziały artylerii w umiejętności zwalczania czołgów. <br>
+                                             W armiach pierwszego rzutu zorganizowano trzy linie obrony. Pierwsza przebiegała w pobliżu frontu, druga była od niego oddalona o 6–12 km, a trzecia o 20–30 km. Na niektórych odcinkach stworzono dodatkowe linie obrony, a na całości frontu stworzono jeszcze trzy dodatkowe linie obrony. W sumie było ich minimum sześć, tak że głębokość obrony Frontu Centralnego wynosiła 110 km, a Woroneskiego 85 km. Tylko w pasie Frontu Centralnego od kwietnia do czerwca wykopano 5 tys. km okopów, zbudowano 300 km zapór inżynieryjnych, postawiono 400 tys. min, ustawiono 60 km zapór przeciwczołgowych i wykonano 80 km rowów przeciwczołgowych. W pasie obrony Frontu Woroneskiego postawiono 637,5 tys. min, zbudowano 593 km zapór i wykopano 4240 km okopów. Na całym pasie była rozmieszczona artyleria przeciwpancerna i przeciwlotnicza. Jak widać, obrona była przygotowana bardzo starannie. Na całej linii frontu postawiono także 300 km zapór z drutu kolczastego (w tym 30 km pod napięciem elektrycznym). <br>
+                                             Armie lotnicze przydzielone do frontów Centralnego i Woroneskiego uzyskały uzupełnienia z odwodów Stawki. 16. Armia Lotnicza Frontu Centralnego otrzymała po jednym korpusie lotnictwa myśliwskiego, bombowego i mieszanego, a z kolei 2. Armia Lotnicza Frontu Woroneskiego po jednym korpusie lotnictwa myśliwskiego, bombowego i szturmowego. Lotnictwo ZSRR przed bitwą miało dwa razy więcej myśliwców i kilka razy więcej szturmowców. <br>
+                                             Dowództwo Frontu Centralnego wiedziało, że główny kierunek ataku Grupy Armii „Środek” będzie skierowany przez Ponyry na Kursk, czyli przez pozycje 13. i 70. Armii. Na zagrożonym odcinku długości 95 km zgromadzono 58% oddziałów piechoty, 87% czołgów i dział samobieżnych oraz 70% artylerii. Łącznie front ten miał – razem z lotnictwem i wojskami PWO – 710 tys. żołnierzy, 5282 działa wszystkich kalibrów, 5637 moździerzy 82 i 120 mm oraz 1783 czołgi i działa samobieżne. <br>
+                                             Natomiast na południu spodziewano się głównego ataku z rejonu Biełgorodu na Obojań. Dowództwo Frontu Woroneskiego większość swoich sił rozmieściło na odcinku o długości 164 km. Zgromadzono tam 83% oddziałów piechoty, 90% czołgów i dział samobieżnych oraz 86% artylerii. Na lewym skrzydle tego frontu jego wojska były rozmieszczone na głębokości dochodzącej do 70 km. Łącznie z lotnictwem i wojskami PWO front ten liczył 626 tys. ludzi, 4029 dział, 4150 moździerzy oraz 1661 czołgów i dział samobieżnych. <br>
+                                             Pozostający daleko za linią obrony Front Stepowy dysponował 573 tys. ludzi, 3397 działami, 4004 moździerzami oraz 1551 czołgami i działami samobieżnymi. Działania Frontu Centralnego wspierała 16. Armia Lotnicza, Frontu Woroneskiego – 2. Armia Lotnicza i 17. Armia Lotnicza wchodząca w skład Frontu Południowo-Zachodniego. Do Frontu Stepowego została przydzielona 5. Armia Lotnicza. Na rzecz frontów Woroneskiego i Centralnego działało też Lotnictwo Dalekiego Zasięgu. Armia Czerwona miała razem do dyspozycji (wliczając w to rezerwowy Front Stepowy) 1 mln 909 tys. żołnierzy, 26 499 dział i moździerzy, 4995 czołgów i dział samobieżnych oraz 2,9 tys. samolotów. Jeszcze w czasie walk na łuku kurskim Armia Czerwona otrzymała posiłki w postaci 22 dywizji piechoty, 5 dywizji powietrznodesantowych, 9 korpusów pancernych, 4 korpusów zmechanizowanych i sześciu brygad pancernych (ok. 250 tys. oficerów i żołnierzy) oraz uzupełnienia marszowe w sile do ok. 100 tys. oficerów i żołnierzy. <br><br>
+                                             <b>Ofensywa na skrzydle północnym</b> <br><br>
+                                             Po bombardowaniach artyleryjskich i atakach radzieckiego lotnictwa o godz. 5.30 5 lipca do natarcia ruszyły oddziały niemieckiej 9. Armii. Celem pierwszego ataku wojsk niemieckich w pasie radzieckiej 13. Armii był rejon Małoarchangielska, jednak atak zakończył się porażką. Piechotę zatrzymał ogień artylerii, a pojazdy pancerne nie mogły pokonać pól minowych. W tej sytuacji Niemcy zmienili kierunek natarcia i następny atak był już skierowany na lewe skrzydło tej armii, gdzie udało się im zająć Podoljań. Sukces okupiono jednak stratą kilkudziesięciu pojazdów pancernych. W nocy niemieckie oddziały ponownie ostrzelała radziecka artyleria. 6 lipca ruszył na rozkaz naczelnego dowództwa radziecki kontratak w sile dwóch korpusów pancernych (16. i 19.), jednego korpusu strzeleckiego i trzech dywizji strzeleckich. 16. Korpus Pancerny, wsparty przez piechotę, atakował na froncie o szerokości 34 km. Początkowo udało się nieznacznie odeprzeć Niemców, ale zmasowany ogień okopanych czołgów i dział szturmowych zatrzymał atak i zadał znaczne straty. 107. Brygada Pancerna straciła 90% czołgów. 19. Korpus Pancerny do południa nie zdążył wejść do akcji i kontratak nie miał wystarczającej mocy. Niemcy wykorzystali sytuację i natychmiast uderzyli w kierunku Olchowatki. Położona na wzgórzach była dobrym punktem zarówno do prowadzenia działań obronnych (z perspektywy strony radzieckiej), jak i do kontynuowania działań ofensywnych (z perspektywy strony niemieckiej). W natarciu na Olchowatkę brało udział 170–230 czołgów i dział szturmowych. Obrona radziecka odparła jednak niemieckie uderzenie. Nieco później na niemieckie skrzydło uderzył 19. Korpus Pancerny, ale nie odniósł sukcesu, poniósł natomiast duże straty. <br>
+                                             Następnego dnia celem niemieckiego ataku stała się wieś Ponyry, przez którą przechodziła linia kolejowa Kursk – Orzeł. XLVII Korpus Pancerny gen. Joachima Lemelsena przeprowadził natarcie na Ponyry. Chociaż szerokość pasa natarcia nie przekraczała 12 km, udział w walce po obu stronach wzięło prawie 1 tys. czołgów. Rano do ataku na Ponyry ruszyło 40 czołgów PzKpfw IV. Pół godziny po nich zaatakował batalion Tygrysów. Obrona odparła pięć ataków, ale o godz. 10.00 w rejonie osiedla Ponyry 2 została przerwana. Natychmiastowy kontratak pozwolił odzyskać utracone pozycje. Niemcy zmienili kierunek ataku i przed godz. 15.00 zdołali zbliżyć się do osiedla, ale nie zdołali go zająć. Do wieczora, pomimo wielokrotnie ponawianych ataków, wojska niemieckie przesunęły się zaledwie o 2 km, jednak kosztem sporych strat w ludziach i sprzęcie pancernym. Rankiem 8 lipca do ataku ruszyło 25 czołgów średnich, 15 Tygrysów i 20 Ferdinandów. Natarcie załamało się po stracie 22 czołgów, w tym 5 Tygrysów. Ponowiono je po południu, także bezskutecznie, tracąc przy tym 16 czołgów i 4 działa szturmowe. 9 lipca Niemcy utworzyli grupę szturmową złożoną z 40 lub 45 Tygrysów, batalionu Ferdinandów i dwóch dywizjonów dział szturmowych kalibru 75, 105 i 150 mm. Za nią poruszały się czołgi średnie i piechota na transporterach. W ciągu dwóch godzin grupa ta przebiła się przez pozycje radzieckie koło sowchozu „1 Maja” i ruszyła w kierunku osady Goriełoje. Obrona wokół niej przepuściła niemieckie czołgi i działa szturmowe, które dostały się w przygotowaną przez artylerię zasadzkę. Dodatkowo w tym rejonie znajdowały się rozległe pola minowe. Następnego dnia Niemcy ponowili atak, ale znowu zostali zatrzymani przez ciężką artylerię, tracąc 7 czołgów i 2 działa szturmowe. Po 10 lipca Niemcy dali za wygraną. <br>
+                                             Rosjanie, umiejętnie manewrując odwodami przerzucanymi ze spokojniejszych odcinków frontu, wzmacniali swoją obronę na kluczowych dla siebie kierunkach: w rejonie Olchowatki oraz wsi Ponyry. Tymczasem gen. Model obawiał się zużyć przedwcześnie swoje niezbyt liczne odwody, licząc się z niebezpieczeństwem operacji zaczepnej przeciwnika w rejonie Orła. W dodatku od 11 lipca radzieckie lotnictwo zaczęło zdobywać panowanie w powietrzu, przez co niemieckie ataki pancerne były jeszcze bardziej utrudnione. <br>
+                                             Trzecim rejonem natarcia wojsk gen. Modela był odcinek Kutyrki – Tiepłoje w pasie obrony radzieckiej 70. Armii. Na odcinku tej armii nie prowadzono walk na tak wielką skalę, ale były one nie mniej zawzięte. Toczyły się głównie w rejonie osady Kutyrki, bronionej przez 3. Brygadę Pancerną. 6 i 7 lipca brygada ta odparła wiele ataków, unieszkodliwiając 47 czołgów. Dopiero 8 lipca Niemcom udało się przejąć inicjatywę. O godz. 8.30 duża grupa piechoty na transporterach, wspierana przez 70 czołgów i dział szturmowych, doszła do osiedla Samodurowka i przy wsparciu lotnictwa szturmowego ruszyła w kierunku Tiepłoje – Mołotyczy. Ta druga miejscowość, położona na wzgórzach podobnie jak Olchowatka, stanowiła dogodny punkt wyjściowy dla ataków w głąb pozycji nieprzyjaciela. Do godz. 11.30 3. Brygada Pancerna, jednocześnie atakowana przez Luftwaffe, powstrzymała marsz tej grupy, ale o godz. 12.30 obrona, która poniosła wielkie straty, nie wytrzymała i Niemcy zajęli osady Kaszara, Kutyrki, Pogorielcy i Samodurowka. Tiepłoje pozostało jednak w rękach Armii Czerwonej, dzięki czemu niemieckie natarcie osiągnęło jedynie połowiczny sukces. <br>
+                                             10 lipca z odwodu Grupy Armii „Środek” do dyspozycji gen. Modela oddano 12. Dywizję Pancerną i 36. Dywizję Zmotoryzowaną. W sumie siłami sześciu dywizji pancernych, dwóch zmotoryzowanych i trzech piechoty Niemcy chcieli ostatecznie przełamać opór Armii Czerwonej we wspomnianym rejonie. Jednak dowództwo Frontu Centralnego, wiedząc o tych planach, wzmocniło obronę w rejonie Ponyry – Olchowatka – Mołotyczy nowymi oddziałami czołgów, artylerii i saperów. Na tym odcinku Niemcy ponownie ruszyli 11 lipca. Na ziemi napotkali nie tylko opór mocno osłabionej 3. Brygady Pancernej. Na front przybyła 1. Brygada Pancerna i dwa dywizjony artylerii przeciwlotniczej. Jednocześnie pojawiło się radzieckie lotnictwo. Bombowce nurkujące Pe-2 poważnie utrudniły przeprowadzenie ataku. Po zakończeniu walk na polu o wymiarach 2 km × 3 km znaleziono 74 niemieckie wozy bojowe, w tym 4 Tygrysy i 2 Ferdinandy. Dalszych ataków już nie prowadzono, z obawy przed radzieckim kontrnatarciem w rejonie Orła. <br>
+                                             Całotygodniowe ataki 9. Armii gen. Modela, próbującej w różnych miejscach dokonać przełomu w obronie radzieckiej, nie przyniosły rezultatów. Niemcy posunęli się jedynie na głębokość 10–12 km. Ten niewiele dający rezultat okupili stratą 42 tys. żołnierzy i ok. 500 czołgów. 12 lipca Armia Czerwona przystąpiła do kontrofensywy na północnym skrzydle łuku kurskiego, mającej na celu zlikwidowanie występu orłowskiego i wyzwolenie Orla.  <br> <br>
+                                             <b>Ofensywa na skrzydle południowym</b> <br> <br>
+                                             Zgodnie z założeniami operacji „Cytadela” równocześnie z atakami 9. Armii gen. Modela na północy miało nastąpić od południa natarcie wykonane siłami 4. Armii Pancernej gen. Hotha wspieranej przez Grupę Operacyjną „Kempf” gen. Wernera Kempfa. Teren walk na południu różnił się od rejonu operacyjnego wojsk gen. Modela, był bowiem dogodniejszy dla użycia czołgów. Stąd też wspomniane oddziały niemieckie generałów Hotha i Kempfa dysponowały silniejszymi oddziałami pancernymi niż wojska nacierające na północ. <br>
+                                             Po nocnych bombardowaniach radzieckiej artylerii i lotnictwa o godz. 6.00 rano 5 lipca Niemcy rozpoczęli swoje natarcie. W pierwszym rzucie miały uderzać dwa korpusy pancerne (XLVIII Korpus Pancerny gen. Otto von Knobelsdorffa i II Korpus Pancerny SS Obergruppenführera Paula Haussera) z armii gen. Hotha, na lewym skrzydle zabezpieczane przez LII Korpus Armijny, a na prawym przez Grupę Operacyjną „Kempf”. Główne uderzenie było wymierzone w pas obrony 6. Gwardyjskiej Armii i przebiegało wzdłuż drogi Biełgorod – Obojań. <br>
+                                             Formacje pancerne gen. Hotha nacierały dwoma klinami, atakując na odcinkach Nowa Gorianka – Butowo i Strieleckoje – Jeriki. W wyniku ponawianych wielokrotnie ataków na pierwszym z tych odcinków Niemcy zdołali przełamać radziecką obronę na głębokości 5 km w pasie szerokości 11 km. Również drugi kierunek natarcia przyniósł sukces, ponieważ tam udało się im włamać wąskim klinem na 8–10 km w głąb obrony przeciwnika. Skuteczność tego ataku (podobnie jak w czasie całej bitwy kurskiej) osłabiały radzieckie pola minowe, na których stawały niemieckie czołgi. Niemieckie uderzenie wspierały samoloty szturmowe i bombowce nurkujące, jednak z każdym dniem bitwy radzieckie lotnictwo coraz wyraźniej zyskiwało przewagę w powietrzu. <br>
+                                             Napór nieprzyjaciela zmusił oddziały radzieckiej 6. Gwardyjskiej Armii do wycofania się na drugą linię obrony. W celu ratowania sytuacji na linię frontu wysłano dwa pułki artylerii przeciwpancernej, a jednocześnie 6. Korpus Pancerny z rejonu Bierezowki miał uderzyć na czołgi niemieckie. Atak niemiecki był głównie powstrzymywany przez artylerię. Na jednym z odcinków artylerzyści, którzy powstrzymywali Niemców, stracili 70% stanu osobowego, na innym – 50% stanu osobowego i 30% sprzętu. Na skutek ognia artylerii przeciwpancernej Niemcy stracili 13 czołgów, w tym 3 Tygrysy. <br>
+                                             Na 6 lipca dowodzący Frontem Woroneskim gen. Nikołaj Watutin szykował potężne przeciwuderzenie wszystkimi siłami pancernymi, którymi dysponował. Powinno ono doprowadzić do rozstrzygnięcia bitwy. Rosjanie liczyli na rozbicie nacierających oddziałów 4. Armii Pancernej, to zaś miało powstrzymać Grupę Operacyjną „Kempf” uderzającą na południe od dywizji gen. Hotha. W nocy z 5 na 6 lipca siły 6. Gwardyjskiej Armii zostały mocno wzmocnione przez dwa korpusy pancerne 1. Armii Pancernej. Dodatkowo na jej skrzydłach rozmieszczono 2. i 5. Gwardyjski Korpus Pancerny. Rankiem 3. Korpus Zmechanizowany i 6. Korpus Pancerny 1. Armii Pancernej zajęły pozycje pod miastem Obojań. Także Niemcy liczyli na to, że kolejne silne natarcie wykonane tego samego dnia złamie obronę wroga, która powinna być już mocno nadszarpnięta. Musieli śpieszyć się, byli bowiem świadomi, że przeciwnik spodziewa się nadejścia posiłków, których ruch wykryło niemieckie rozpoznanie. <br>
+                                             Gen. Hoth miał zamiar uderzać wszystkimi dywizjami pancernymi, włączając do działań pozostające dotąd w odwodzie 3. Dywizję Pancerną i 2. Dywizję Pancerną SS „Das Reich”. Potężny klin pancerny uderzający z rejonu Krasnyj Poczinok – Czerkasskoje powinien doprowadzić do przełamania radzieckiej obrony, a w rezultacie do okrążenia sił przeciwnika broniących się na zachód od rzeki Worskła. <br>
+                                             Pierwsi zaatakowali Niemcy, czym zniweczyli taki sam zamiar drugiej strony. O godz. 3.45 6 lipca ruszyły pododdziały 3. Dywizji Pancernej SS „Totenkopf”. Wieś Jeriki, pierwszy cel ataku, padła pomimo zażartej obrony. Do końca tego dnia grenadierzy pancerni zdobyli kilka kilometrów terenu, mimo że przez cały czas musieli odpierać kontrataki 2. Gwardyjskiego Korpusu Pancernego. Sytuację dywizji SS „Totenkopf” pogorszył sukces sąsiedniej dywizji SS „Das Reich”, która włamawszy się głęboko w pozycje radzieckie zmusiła ją do obrony znacznie wydłużonego frontu. <br>
+                                             Do walki na kierunku obojańskim ruszyły czołgi i piechota z 1. Armii Pancernej gen. Michaiła Katukowa. Niemcy, mając znaczną przewagę skutecznego zasięgu swoich dział czołgowych, natarcie Rosjan przyjęli ze spokojem. Czołgi Katukowa ponosiły tak duże straty, że generał poprosił Stalina o zgodę na przejście do obrony. Jednocześnie gen. Watutin rozkazał dowódcy 7. Gwardyjskiej Armii wykonanie natarcia na wojska Grupy Operacyjnej „Kempf” rozlokowane na niedawno zdobytym przyczółku na wschodnim brzegu rzeki Doniec. Na razie jednak to wojska gen. Kempfa kontynuowały atak. 19. Dywizja Pancerna, osłaniana na skrzydłach przez 6. i 7. Dywizję Pancerną, uderzała w kierunku północno-wschodnim. Dopiero przysłanie posiłków w postaci silnych jednostek artylerii przeciwpancernej zatrzymało to natarcie. <br>
+                                             Na lewym skrzydle nacierający dotąd z uporem XLVIII Korpus Pancerny, wspierany przez część LII Korpusu Armijnego, został zatrzymany na linii rzeki Piena (lewy dopływ rzeki Psioł). Nie powiodły się także ataki na radziecką obronę na odcinku Rakowo – Luchanino. W tej sytuacji dowódca XLVIII Korpusu Pancernego gen. von Knobelsdorff próbował szukać powodzenia na kierunku wschodnim, uderzając na Dmitrijewkę i Olchowkę. Wprawdzie udało mu się zmusić radziecką obronę do odwrotu, ale niedługo niemieckie natarcie utknęło i tu. <br>
+                                             Podobnie sytuacja wyglądała w pasie natarcia II Korpusu Pancernego SS. Oddziały 1. Dywizji Pancernej SS „Leibstandarte Adolf Hitler” i 167. Dywizji Piechoty toczyły uporczywe walki o wieś Jakowlewo, bronioną zaciekle przez 51. Gwardyjską Dywizję Strzelecką, wspieraną przez jedną, a później dwie brygady pancerne. Niemcy, nie mogąc sobie z nimi poradzić, próbowali znaleźć słabe punkty obrony radzieckiej w innym miejscu. Zaatakowali na północny wschód od tej wsi, w kierunku na Łuczki, których broniły oddziały 5. Gwardyjskiego Korpusu Pancernego. Po zdobyciu tej wsi Niemcy zagrozili prawemu skrzydłu wspomnianego korpusu, który obawiając się okrążenia, wycofał się na drugą linię obrony. Był to jednak połowiczny sukces niemieckiego natarcia w sytuacji pozostawiania w tyle XLVIII Korpusu Pancernego i związków uderzeniowych gen. Kempfa.  <br>
+                                             Dowódca Frontu Woroneskiego gen. Nikołaj Watutin, zagrożony przez niemieckie ataki, otrzymał wsparcie z innych frontów: 5. Gwardyjską Armię Pancerną gen. Pawła Rotmistrowa i dwa korpusy pancerne (2. i 10.), które skierowano w rejon Prochorowki. <br>
+                                             Dzięki sukcesom II Korpusu Pancernego SS, który włamał się w drugą linię obrony radzieckiej Niemcy sądzili, że ich ofensywa zaczyna przynosić rezultaty. W tym momencie dowództwo 4. Armii Pancernej stanęło przed dylematem: obejść i okrążyć pozycje 6. Gwardyjskiej Armii i 1. Armii Pancernej (jak sugerowali gen. Hothowi oficerowie jego sztabu) czy też kontynuować natarcie w kierunku Prochorowki (II Korpus Pancerny SS) i rzeki Psioł (XLVIII Korpus Pancerny). Gen. Hoth wybrał to drugie rozwiązanie. Do wieczora 6 lipca oddziały niemieckie zajęły Aleksejewkę, Luchanino, Olchowkę i Tririecznoje, ale ich marsz na Obojań został zatrzymany. 7 lipca XLVIII Korpus Pancerny uderzył na wojska 3. Korpusu Zmechanizowanego w rejonie Wierchopieni, jednak nie odniósł powodzenia. Także następnego dnia jego ataki nie przyniosły oczekiwanego rezultatu. Dopiero 9 lipca Wierchopienie zostało zdobyte przez Niemców, a wyczerpane oddziały radzieckie wycofały się na swoją drugą linię obrony. Atak w kierunku Obojania był kontynuowany 9 lipca. Przy wsparciu lotnictwa niemieckie oddziały zdołały się przesunąć o 6 km, ale dalszy marsz uniemożliwiły im strzelające na wprost działa przeciwlotnicze i okopane czołgi. Ponieważ przełamanie frontu było niemożliwe bezpośrednio w kierunku na Obojań, powstał pomysł obejścia najsilniej bronionych punktów i wykonania ataku oskrzydlającego w kierunku Prochorowki. <br>
+                                             10 lipca 1943 roku Hitler otrzymał wiadomość o lądowaniu aliantów na Sycylii. Nie wpłynęła ona na decyzje dotyczące operacji „Cytadela”. Zdaniem Hitlera powinna być ona kontynuowana. Następnego dnia dowódca Grupy Armii „Południe” feldmarsz. Erich von Manstein spotkał się z dowódcami swoich ugrupowań uderzeniowych, generałami Hothem i Kempfem. Pierwszy z nich zameldował o rozbiciu głównych sił radzieckich, które nie powinny już stanowić zagrożenia jakimikolwiek akcjami zaczepnymi, drugi zaś – przeciwnie, meldował o własnych stratach, zwłaszcza tych, które poniósł III Korpus Pancerny. Mimo to był zdania, że jego siły są zdolne do prowadzenia natarcia. <br>
+                                             Głównym zmartwieniem Mansteina i Hotha było powolne natarcie Grupy Operacyjnej „Kempf”, która nie mogła osłaniać prawej flanki II Korpusu Pancernego SS w zbliżającym się ataku na Prochorowkę po tym, jak Niemcy zmienili swój kierunek ataku z Obojania na Prochorowkę. W nocy 11 lipca oddziały 6. Dywizji Pancernej z III Korpusu Pancernego Grupy Operacyjnej „Kempf” uchwyciły przyczółek na prawym brzegu Dońca. Zaraz potem na przyczółku znalazła się reszta jednostek III Korpusu Pancernego. Groziło to oskrzydleniem 5. Gwardyjskiej Armii Pancernej, a także 48. Korpusu Strzeleckiego z 69. Armii. Przełamanie radzieckich linii w rejonie Prochorowki wydawało się być na wyciagnięcie ręki. <br> <br>
+                                             <b>Bitwa pod Prochorowką</b> <br> <br>
+                                             11 lipca oddziały II Korpusu Pancernego SS przeprowadziły uderzenia w kierunku Prochorowki, odnosząc na niektórych odcinkach sukcesy. Korpus podczas walk 11 lipca zajął pozycje wyjściowe do ataku 12 lipca, który miał złamać radzieckie linie obronne, zająć Prochorowkę i tym samym otworzyć przed Niemcami sporą przestrzeń operacyjną do bezpośredniego uderzenia na Kursk. W nocy z 11 na 12 lipca 5. Gwardyjska Armia Pancerna zaczęła zajmować swoje pozycje w rejonie Prochorowki. Według planów dowództwa Frontu Woroneskiego rano 12 lipca miała ona rozpocząć kontrofensywę i odrzucić wojska niemieckie. Działania ofensywne II Korpus Pancernego SS 11 lipca zmusiły gen. Rotmistrowa do zmiany dyslokacji swoich oddziałów. 18. Korpus Pancerny zajął nowe pozycje między rzeką Psioł a Prochorowką, 29. Korpus Pancerny po obu stronach linii kolejowej biegnącej przez Prochorowkę, a 2. Gwardyjski Korpus Pancerny na południe od niej. W drodze był jeszcze 5. Gwardyjski Korpus Zmechanizowany, który miał dotrzeć do rejonu walk popołudniu 12 lipca.  <br>
+                                             O godz. 8.00 rano 12 lipca artyleria oddziałów radzieckich otworzyła ogień. Wkrótce po tym do ataku ruszyły siły 5. Gwardyjskiej Armii Pancernej. Czołgi 18. Korpusu Pancernego nacierały z maksymalną prędkością, by skrócić dystans między nimi a niemieckimi czołgami, ponieważ zasięg ich armat był mniejszy. Około godz. 18.00, po ciężkich i krwawych walkach, atak 18. Korpusu Pancernego został powstrzymany przez dywizję SS „Leibstandarte Adolf Hitler” i przeszedł on do obrony. Natarcie 2. Gwardyjskiego Korpusu Pancernego też się załamało po natarciu flankowym dywizji SS „Das Reich”. Takie same były losy 2. Korpusu Pancernego. 29. Korpus Pancerny toczył zażarte walki o wzgórze 252,5 z dywizją SS „Leibstandarte Adolf Hitler”. Wsparła ją dywizja SS „Totenkopf”, co zmusiło 29. Korpus Pancerny do przejścia do obrony. <br>
+                                             Pomimo tego, że Niemcom udało się odeprzeć radzieckie kontruderzenie, ich własny atak tak samo nie odniósł większych sukcesów. Z tego powodu w południe 12 lipca dowództwo niemieckie postanowiło zmienić kierunek ataku. Zamiast ataków frontalnych oddziały niemieckie miały sforsować rzekę Psioł i nacierać następnie na północ od Prochorowki, by uderzyć na tyły 5. Gwardyjskiej Armii Pancernej. Wyznaczona do tego zadania dywizja SS „Totenkopf” zajęła wzgórze 226,6, jednak dalsze natarcie zostało powstrzymane przez siły Armii Czerwonej. <br>
+                                             Bitwa pod Prochorowką przeszła do historii jako największa bitwa pancerna II wojny światowej. Żadna ze stron nie osiągnęła swoich celów. Radziecki kontratak został powstrzymany, a Rosjanie zmuszeni do przejścia do obrony. Niemieckie uderzenie jednak nie przełamało radzieckich linii obronnych, a ich możliwości ofensywne zostały wyczerpane. Trzy tygodnie po bitwie, 3 sierpnia, Rosjanie przeszli do generalnej kontrofensywy na południowym skrzydle łuku kurskiego. <br> <br>
+                                             <b>Decyzja o przerwaniu operacji „Cytadela”</b> <br> <br>
+                                             13 lipca feldmarszałkowie Erich von Manstein, dowódca Grupy Armii „Południe, i Günther von Kluge, dowódca Grupy Armii „Środek”, przybyli na spotkanie z Hitlerem w Wilczym Szańcu w Prusach Wschodnich. Na spotkaniu Hitler oznajmił, że podjął decyzję o przerwaniu operacji „Cytadela”. Na jego decyzję wpłynęło kilka czynników. Sytuacja w rejonie wybrzuszenia orłowskiego stawała się coraz gorsza. Radziecka kontrofensywa w tym miejscu, rozpoczęta dzień wcześniej, mogła doprowadzić do zniszczenia wojsk niemieckich wokół Orła. Sytuacja na południowej flance Grupy Armii „Południe” wyglądała niepokojąco. Nad Dońcem, na południe od Charkowa, Rosjanie zgromadzili olbrzymie siły naprzeciw 1. Armii Pancernej i 6. Armii wchodzących w skład tej grupy armii, co powodowało spore zagrożenie dla wojsk niemieckich atakujących wybrzuszenie kurskie od południa. Dodatkowo straty niemieckie podczas operacji „Cytadela” urosły do zbyt dużych rozmiarów. Między 5 a 12 lipca walcząca na północy 9. Armia straciła 20 000 żołnierzy. Niemcy nie mieli odpowiednio dużych odwodów, by uzupełnić swoje straty i wysłać posiłki do powstrzymania radzieckich kontrataków w rejonie Orła i Prochorowki. Na koniec pozostawała kwestia alianckiej inwazji na Sycylię rozpoczętej 10 lipca. Armia włoska nie była w stanie powstrzymać wojsk alianckich. Z tego powodu w rejon ten Niemcy musieli przerzucić swoje własne oddziały. Hitler obawiał się też inwazji na Bałkanach i chciał przerzucić siły także tam. Jedynymi dostępnymi oddziałami były wojska walczące pod Kurskiem. <br>
+                                             Kluge przyjął decyzję Hitlera z dużym optymizmem. Uważał on, że 9. Armia nie osiągnęła zakładanych celów i musiała przerwać swoje działania, by przesunąć swoje oddziały na północ celem odparcia radzieckiej kontrofensywy w rejonie Orła. Manstein był przeciwny przerywaniu ofensywy. Uważał on, że Rosjanie wprowadzili do walki swoje ostatnie rezerwy operacyjne i że jego wojska były o krok od przełamania linii radzieckich. Zdaniem Mansteina 9. Armia powinna kontynuować swoje działania, by wiązać duże oddziały radzieckie. W tym samym czasie jednostki gen. Hotha i gen. Kempfa kontynuowałyby swoje działania na wschód od Obojania w rejonie rzeki Psioł i Prochorowki aż do przełamania linii radzieckich, by następnie doprowadzić do całkowitego zniszczenia wojsk radzieckich na południe od Kurska i wyjścia na tyły Frontu Centralnego. Do wykonania tego zadania potrzebne było przesunięcie odwodowego XXIV Korpusu Pancernego w rejon działania sił Grupy Armii „Południe”. Manstein już wtedy przerzucił ten korpus w rejon Charkowa w przygotowaniu do kolejnego natarcia (liczył on wtedy 104 czołgi i 7 dział szturmowych). Kluge był przeciwny planom Mansteina, uważał on że 9. Armia nie była w stanie kontynuować swoich działań ofensywnych i musiała się wycofać na pozycje wyjściowe sprzed operacji.  <br>
+                                             Mimo argumentów Mansteina stanowisko Hitlera pozostało bez zmian, operacja „Cytadela” miała zostać przerwana. Pomimo tego Hitler zgodził się na ograniczone działania. 9. Armia miała zatrzymać radziecką kontrofensywę, a oddziały Grupy Armii „Południe” kontynuować ograniczone ataki celem zniszczenia operacyjnych rezerw radzieckich, co uniemożliwiłoby przeprowadzenie Armii Czerwonej letniej kontrofensywy tego roku, a następnie zajęcie dogodnych pozycji obronnych. XXIV Korpus Pancerny miał jednak pozostać w odwodzie w obawie przed radzieckimi działaniami ofensywnymi w rejonie Dońca.  <br>
+                                             17 lipca wydany został rozkaz o wycofaniu z frontu II Korpusu Pancernego SS w rejon na zachód od Biełgorodu z zamiarem dalszego przeniesienia do Włoch. Następnego dnia OKH wydało rozkaz o przeniesieniu dwóch dywizji piechoty z Grupy Armii „Południe” do Grupy Armii „Środek”. Oddziały niemieckie na południowej części klina kurskiego następnie wycofały się na rubież sprzed 5 lipca. <br>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card">
+                                    <div class="card-header" id="headingMainTwo">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseMainTwo" aria-expanded="false" aria-controls="collapseMainTwo">
+                                          Strony konfliktu, siły i straty
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseMainTwo" class="collapse" aria-labelledby="headingMainTwo" data-parent="#accordionMain">
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card-body">
+                                                   <img src="../zdjecia/rzesza.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card-body">
+                                                   <img src="../zdjecia/soviet.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Na początku bitwy:</b><br>
+                                                         -900 tys. żołnierzy<br>
+                                                         -2700 czołgów i dział szturmowych<br>
+                                                         -2050 samolotów<br>
+                                                         -10 000 dział i moździerzy<br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Na początku bitwy:</b><br>
+                                                         -1 mln 909 tys. żołnierzy<br>
+                                                         -4995 czołgów i dział samobieżnych<br>
+                                                         -2900 samolotów<br>
+                                                         -26 499 dział i moździerzy<br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>W wyniku ofensywy na Kursk i radzieckiej kontrofensywy:</b><br>
+                                                         -57,7 tys. zabitych lub zaginionych<br>
+                                                         -187 300 rannych lub chorych<br>
+                                                         -1,3 tys. czołgów i dział samobieżnych straconych<br>
+                                                         -ok. 1 tys. samolotów straconych<br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>W wyniku obrony i bezpośredniej kontrofensywy:</b><br>
+                                                         -254 470 zabitych lub zaginionych<br>
+                                                         -608 833 rannych lub chorych<br>
+                                                         -6064 czołgów i dział samobieżnych straconych<br>
+                                                         -1626 samolotów straconych<br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card">
+                                    <div class="card-header" id="headingMainThree">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseMainThree" aria-expanded="false" aria-controls="collapseMainThree">
+                                          Następstwa i skutki
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseMainThree" class="collapse" aria-labelledby="headingMainThree" data-parent="#accordionMain">
+                                       <div class="card-body">
+                                          <img src="../zdjecia/kursk_nastpepstwa_maly.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x3">
+                                          <div class="modal fade bd-example-modal-x3" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                             <div class="modal-dialog modal-xl">
+                                                <div class="modal-content">
+                                                   <div class="modal-header">
+                                                      <h5 class="modal-title" id="exampleModalLabel">Bitwa na Łuku Kurskim</h5>
+                                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                      <span aria-hidden="true">&times;</span>
+                                                      </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                      <img src="../zdjecia/kursk_nastpepstwa_duzy.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                   </div>
+                                                   <div class="modal-footer">
+                                                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                          <div class="text-left">
+                                             <b>Skutki bitwy</b><br><br>
+                                             Walki pod Kurskiem zakończyły się decydującym i strategicznym sukcesem Armii Czerwonej. Po raz pierwszy w Wielkiej Wojnie Ojczyźnianej Armii Czerwonej udało się powstrzymać letnią niemiecką ofensywę, zanim przełamała ona obronę oddziałów radzieckich i weszła na ich głęboką przestrzeń operacyjną. 
+                                             <br>
+                                             Pomimo użycia lepszych technologicznie czołgów Niemcy nie byli w stanie przebić się przez dobrze ufortyfikowane linie radzieckie. Od tej pory inicjatywa strategiczna przeszła w ręce Armii Czerwonej. 
+                                             <br>
+                                             Choć Rosjanie ponieśli większe straty w ludziach i sprzęcie, to straty poniesione przez Niemców były dla nich o wiele dotkliwsze. 
+                                             <br>
+                                             Niemcy, w przeciwieństwie do Rosjan, nie mieli odpowiednio dużych środków, by móc uzupełnić swoje straty. 
+                                             Gen. Heinz Guderian pisał: „Klęska "Cytadeli" oznaczała naszą decydującą porażkę. Formacje pancerne, zreformowane i dozbrojone z tak wielkim wysiłkiem, poniosły ciężkie straty w ludziach i sprzęcie, stając się teraz przez długi czas niezdolne do wykorzystania. 
+                                             <br>
+                                             Pozostawało kwestią wielce wątpliwą, czy odzyskają sprawność na tyle szybko, że będą mogły bronić wschodniego frontu. Nie ma potrzeby powtarzać, że Rosjanie w pełni wykorzystali zwycięstwo. Na froncie wschodnim nie miały już się powtarzać okresy spokoju. Nieprzyjaciel zyskał od tego czasu niezaprzeczoną inicjatywę”.
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="card">
+                  <div class = "text-center">
+                     <div class="card-header" id="headingBottomTwo">
+                        <h5 class="mb-0">
+                           <button class="btn btn-link collapsed text-secondary text-decoration-none" type="button" data-toggle="collapse" data-target="#collapseBottomTwo" aria-expanded="false" aria-controls="collapseBottomTwo">
+                           <b> Ofensywa w Ardenach </b>
+                           </button>
+                        </h5>
+                     </div>
+                  </div>
+                  <div id="collapseBottomTwo" class="collapse" aria-labelledby="headingBottomTwo" data-parent="#accordionBottom1">
+                     <div class="card-body">
+                        <div class="card text-center">
+                           <div class="card-body">
+                              <img src="../zdjecia/ardeny_male_1.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x11">
+                              <div class="modal fade bd-example-modal-x11" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                 <div class="modal-dialog modal-xl">
+                                    <div class="modal-content">
+                                       <div class="modal-header">
+                                          <h5 class="modal-title" id="exampleModalLabel">Ofensywa w Ardenach</h5>
+                                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                          </button>
+                                       </div>
+                                       <div class="modal-body">
+                                          <img src="../zdjecia/ardeny_duze_1.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                       </div>
+                                       <div class="modal-footer">
+                                          <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="text-left">
+                                 <br>
+                                 Ofensywa w Ardenach, bitwa o Ardeny – bitwa stoczona w Ardenach na przełomie 1944 i 1945 roku. Była ostatnią dużą operacją ofensywną wojsk niemieckich na froncie zachodnim w czasie II wojny światowej. <br>
+                                 Armia niemiecka zamierzała rozciąć siły aliantów, oddzielając wojska brytyjskie od amerykańskich, zdobyć Antwerpię, a następnie zaatakować w kierunku północnym, okrążając i niszcząc cztery armie alianckie. Miało to zmusić aliantów zachodnich do wynegocjowania pokoju z państwami Osi.<br>
+                                 Pomimo że ofensywa zakończyła się ostatecznie klęską, początkowo zaskoczyła aliantów i zmusiła ich do poważnych zmian w planach oraz zaangażowania sporych sił do jej powstrzymania. Z drugiej strony, armia niemiecka poniosła tak duże straty w sprzęcie i żołnierzach, że ułatwiło to późniejszą ofensywę aliantów na Linię Zygfryda oraz ofensywę radziecką, która ruszyła na wschodzie na początku stycznia 1945 roku. Pod względem wielkości zaangażowanych sił była to największa bitwa w historii wojsk Stanów Zjednoczonych.<br><br>
+                              </div>
+                              <div class="accordion" id="accordionSecond">
+                                 <div class="card">
+                                    <div class="card-header" id="headingSecondOne">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseSecondOne" aria-expanded="true" aria-controls="collapseSecondOne">
+                                          Przebieg bitwy
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseSecondOne" class="collapse" aria-labelledby="headingSecondOne" data-parent="#accordionSecond">
+                                       <div class="card-body">
+                                          <div class= "text-left">
+                                             <img src="../zdjecia/ardeny_male_2.png" class="img-fluid  rounded mx-auto d-block" data-toggle="modal" data-target=".bd-example-modal-x22">
+                                             <div class="modal fade bd-example-modal-x22" tabindex="-1" role="dialog" aria-labelledby="myExtraLargeModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog modal-xl">
+                                                   <div class="modal-content">
+                                                      <div class="modal-header">
+                                                         <h5 class="modal-title" id="exampleModalLabel">Ofensywa w Ardenach</h5>
+                                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                         <span aria-hidden="true">&times;</span>
+                                                         </button>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                         <img src="../zdjecia/ardeny_duze_2.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Zamknij</button>
+                                                      </div>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <b>Przebieg walk</b><br><br>
+                                             Po przełamaniu linii frontu w Normandii w sierpniu 1944 r. wojska aliantów wyzwoliły Francję, poruszając się z niezwykłą szybkością. Sukces tej ofensywy stworzył wiele problemów logistycznych z zaopatrzeniem nacierających armii. Dziennie dywizje alianckie zużywały 4 mln litrów paliwa, a na jedną dywizję przypadało kilkaset ton zaopatrzenia. Alianci mieli w swoich rękach tylko jeden port, Cherbourg, na tyle mało zniszczony, że mógł odbierać dostawy sprzętu konieczne do kontynuowania natarcia. 
+                                             Problem przeładunku zaopatrzenia był spotęgowany kłopotami z jego transportem. Sytuacja z zaopatrzeniem była na tyle dramatyczna, że na początku października 1944 r. sprzymierzeni zostali zmuszeni do zaprzestania działań ofensywnych, mimo że wojska niemieckie bardzo szybko ustępowały z okupowanych terenów. 
+                                             Zatrzymanie linii frontu potrzebne na przegrupowanie sił aliantów i podciągnięcie linii zaopatrzenia pozwoliło von Rundstedtowi na zreorganizowanie wojsk niemieckich na tym froncie. <br>
+                                             Dowódcy poszczególnych armii alianckich starali się uzyskać przynajmniej tyle materiałów zaopatrzeniowych, aby pozwolić swojej własnej armii na kontynuowanie natarcia, ale głównodowodzący siłami sprzymierzonych Dwight Eisenhower był zwolennikiem strategii natarcia na szerokim froncie, jednak priorytet miały siły znajdujące się na północnym odcinku frontu. Miały one odblokować port w Antwerpii, którego otworzenie mogło znacznie poprawić sytuację zaopatrzeniową aliantów. 
+                                             Po fiasku operacji Market Garden zaplanowanej przez marszałka Montgomery’ego, której celem było otwarcie drogi do Antwerpii, przeskoczenie Renu i obejście linii Zygfryda, wojska sprzymierzonych znalazły się w jeszcze gorszej sytuacji niż wcześniej, bo całe dostępne zaopatrzenie zostało użyte na potrzeby tej ofensywy. Dopiero w listopadzie 1. armia kanadyjska wyparła Niemców z ujścia Skaldy i odblokowała port w Antwerpii. Łatwo zauważyć, że to właśnie ofensywa wojsk kanadyjskich powinna była otrzymać priorytet, a nie operacja Market Garden. Jednak dowództwo armii kanadyjskiej nie miało tak silnych wpływów politycznych na Eisenhowera, jak Montgomery czy Patton i dlatego, pomimo iż militarnie znaczenie tego natarcia było pierwszorzędne, zostało ono relegowane do „drugiej ligi”. Do końca listopada zaopatrzenie wojsk sprzymierzonych znacznie się poprawiło, ale ich siły były nadal bardzo rozciągnięte na szerokim froncie obejmującym Francję, Belgię i Luksemburg. 
+                                             Sytuacja, w której znajdowała się armia niemiecka, była rozpaczliwa. Na froncie wschodnim Armia Czerwona zniszczyła Grupę Armii „Środek” (Operacja Bagration), a ofensywa wojsk sowieckich zatrzymała się tylko z powodu zmęczenia wojska i pogarszającej się sytuacji zaopatrzeniowej. Dla sztabu niemieckiego było oczywiste, że po wymuszonym zatrzymaniu się, wojska te przygotowywały się do zimowej ofensywy, która miała zapewne rozpocząć się w grudniu. <br>
+                                             Na froncie zachodnim sytuację Niemców dodatkowo pogarszał fakt, iż Luftwaffe została praktycznie wyeliminowana z walki przez lotnictwo aliantów. Pozbawiło to Niemców podstawowego źródła informacji o ruchach sił sprzymierzonych oraz możliwości atakowania linii zaopatrzenia nieprzyjaciela. Całkowite panowanie aliantów w powietrzu było niezmiernie demoralizujące dla wojsk niemieckich, które były nieustannie atakowane przez samoloty wroga. <br>
+                                             Dobrą stroną dla Niemców było to, że nie musieli już bronić całej zachodniej Europy, dzięki czemu radykalnie skróciła się linia frontu, a także linie zaopatrzenia – choć nadal były narażone na ataki z powietrza. Dodatkowym plusem było to, że komunikacja mogła się teraz w większym stopniu opierać o system telefoniczny, pozbawiając aliantów źródeł informacji, które otrzymywali oni po złamaniu kodu Enigmy. <br><br>
+                                             <b>Wybór celu ofensywy</b><br><br>
+                                             Hitler nie miał złudzeń co do sytuacji na froncie, sądził jednak, że obrona Niemiec będzie możliwa, jeśli walki będą się toczyły tylko na jednym froncie. Po zakończeniu nieudanej operacji Market Garden na froncie zachodnim i czasowym zatrzymaniu operacji radzieckich na froncie wschodnim, inicjatywa operacyjna została chwilowo przejęta przez Niemców. Zdawali oni sobie doskonale sprawę, że był to najlepszy moment na przygotowanie rozstrzygającego kontrataku. Biorąc pod uwagę układ sił w tym momencie, sztab niemiecki wiedział, że szanse na udaną akcję ofensywną na froncie wschodnim są znikome. Przeanalizowano kilka planów z takimi pomysłami, ale żaden z nich nie oferował poważnych zysków strategicznych. Dysproporcja dostępnych sił była tak duża na korzyść sowietów, że nawet okrążenie i zniszczenie całych armii radzieckich nie przyniosłoby żadnego ostatecznego rozwiązania, a obecny kształt linii frontu na wschodzie nie opierał się na żadnej naturalnej linii obrony. <br>
+                                             Sytuacja na froncie zachodnim prezentowała się z punktu widzenia niemieckiego bardziej interesująco. Trudności logistyczne nadal stanowiły poważny problem dla aliantów, choć otwarcie portu w Antwerpii poprawiło sytuację. Niemniej siły angloamerykańskie były rozciągnięte na bardzo szerokim froncie, a niektóre jego odcinki były bardzo słabo obsadzone. Skuteczny atak mógłby teoretycznie pozwolić na poważną zmianę sytuacji strategicznej. <br>
+                                             Zaoferowano kilka planów, z których szybko wybrano dwa. Pierwszy sugerował atak na styku 9. i 3. armii amerykańskich, z nadzieją na ich okrążenie i zniszczenie, efektywnie powstrzymując aliantów i dając Niemcom dalszą inicjatywę strategiczną. <br>
+                                             Drugi pomysł to szybkie uderzenie przez słabo obsadzone Ardeny w południowej Belgii, odcinające wojska amerykańskie od angielskich, które miało zakończyć się zdobyciem Antwerpii. Historycznie Niemcy już wielokrotnie atakowali przez zalesione, górzyste obszary Ardenów, co jednak nigdy nie przeszkadzało ich przeciwnikom sądzić, że atak przez tamtejszy region jest niemożliwy. Ostatni raz Niemcy uczynili to w 1940 r. obchodząc przez Ardeny francuską linię Maginota i umocnienia belgijskie. 
+                                             Oba plany sugerowały atak na pozycje amerykańskie, głównie dlatego że Hitler uważał, iż wojska amerykańskie nie potrafią dobrze walczyć, a w razie poważnej porażki opinia publiczna w Stanach Zjednoczonych może przychylić się w kierunku rokowań pokojowych. Nie ma żadnych dowodów na to, aby sam Hitler czy jego doradcy orientowali się, że w tym momencie Stany Zjednoczone prawie nie odczuły jeszcze kosztów prowadzenia wojny i miały największy potencjał, który pozwalał na szybkie odbudowanie poniesionych strat. 
+                                             Hitler szybko skoncentrował się na drugim z planów. Doszedł do wniosku, że ewentualne okrążenie armii amerykańskiej jest niewystarczające, do zwycięstwa potrzebne jest całkowite odizolowanie sił amerykańskich od angielskich. Wzajemna niechęć Pattona i Montgomery’ego była powszechnie znana nawet Niemcom i Hitler sądził, że w razie serii porażek, ich dalsza współpraca byłaby niemożliwa z powodu wewnętrznych kłótni. Hitler wierzył, że w razie powodzenia ataku, cztery armie zostaną odizolowane i zniszczone i że zmusi to zachodnich aliantów do przyjęcia pokoju. Dzięki temu Niemcy mogliby skoncentrować wszystkie siły na jednym froncie. Ponadto niemieckie dowództwo wiedziało o coraz gorszych stosunkach między ZSRR a rządem Wielkiej Brytanii oraz USA i liczyło, że przedłużenie obrony Niemiec mogłoby spowodować powstanie otwartego konfliktu pomiędzy państwami koalicji antyhitlerowskiej (np. w wyniku sporu o przyszły los państw bałkańskich). <br><br>
+                                             <b>Planowanie</b><br><br>
+                                             Hitler już w połowie września ostatecznie zdecydował, że atak odbędzie się w rejonie Ardenów, tak jak cztery lata wcześniej w czasie inwazji na Francję. Główne siły miały zaatakować w kierunku zachodnim aż do rzeki Mozy, a następnie skręcić na północ w kierunku Antwerpii i Brukseli. Najtrudniejszą częścią tego planu był początek ofensywy. Wybrany na nią górzysty teren bardzo utrudniał szybkie przemieszczenie się wojska, ale liczono, że po dotarciu do Mozy i zmianie kierunku ataku na północny, lepsze drogi w tamtym rejonie pozwolą na przyspieszenie ofensywy. Operacja została nazwana „Wacht am Rhein” („Straż nad Renem”) by zasugerować wywiadowi alianckiemu, że jest to defensywna operacja skoncentrowana na obronie linii Renu. W sztabie marszałka polnego Waltera Modela funkcjonowała również nazwa „Herbstnebel” („Jesienna mgła”). 
+                                             Siły niemieckie przeznaczone do ataku tworzyły cztery armie: <br>
+                                             •	6 Armia Pancerna SS pod dowództwem SS-Oberstgruppenfuhrera Seppa Dietricha. Była to świeżo sformowana grupa operacyjna w skład której weszły najbardziej elitarne jednostki Waffen-SS, włącznie z 1. Dywizja Pancerną SS „Leibstandarte SS Adolf Hitler” i 12. Dywizją Pancerną „Hitlerjugend”. 6. armia stanowiła trzon ataku. Jej ostatecznym zadaniem było zdobycie Antwerpii.<br>
+                                             •	5 Armia Pancerna pod dowództwem gen. Hasso von Manteuffla, która miała za zadanie zdobycie Brukseli.<br>
+                                             •	7 Armia pod dowództwem gen. Ericha Brandenbergera, znajdowała się na południowym skrzydle ataku, a jej podstawowym zadaniem była ochrona lewego skrzydła 5 Armii Pancernej, która jak się miało okazać poczyniła największy wyłom w liniach amerykańskich narażając się na ataki od południa 3 Armii gen. G. Pattona.<br>
+                                             •	15 Armia pod dowództwem gen. Gustava-Adolfa von Zangena. Jej zadaniem było uniemożliwienie kontrataku wojskom amerykańskim znajdującym się w północnej części Ardenów i przeprowadzenia ewentualnej akcji ofensywnej przy sprzyjających warunkach strategicznych.<br>
+                                             Operację nadzorowali marszałek polny Walther Model, dowódca Grupy Armii „B” i Gerd von Rundstedt, dowódca wszystkich niemieckich sił zbrojnych na zachodzie. <br>
+                                             Planiści wyznaczyli 3 warunki konieczne do ostatecznego sukcesu ofensywy: <br>
+                                             •	całkowite zaskoczenie nieprzyjaciela;<br>
+                                             •	złe warunki pogodowe uniemożliwiające wykorzystanie lotnictwa przez aliantów;<br>
+                                             •	szybki atak; marszałek Model uważał, że aby operacja udała się, siły niemieckie muszą dotrzeć do Mozy w czwartym dniu po rozpoczęciu ataku.<br>
+                                             Oryginalny plan zakładał wykorzystanie 45 dywizji, w tym 12 dywizji pancernych i zmechanizowanych tworzących „pancerną pięść” ataku. Okazało się to jednak nierealne z powodu wysokich strat poniesionych przez armię niemiecką i ostatecznie do ataku przystąpiło 30 dywizji. Zachowano założoną liczbę dywizji pancernych, ale nie udało się zgromadzić dostatecznej liczby dywizji piechoty, które były potrzebne do obrony frontu wschodniego. 
+                                             Niektóre z dywizji użytych do tej operacji były nowo sformowane i składały się z rezerwistów, tzw. Volksgrenadier (grenadierzy ludowi). Większość z nowo powołanych żołnierzy była słabo wyszkolona i wyekwipowana. <br>
+                                             Niemcy mieli także poważne problemy z materiałami pędnymi. Większość z nich została dostarczona koleją lub na wozach konnych, aby maksymalnie zaoszczędzić benzynę i ropę. Według bardzo ryzykownych i jak się później okazało nad wyraz optymistycznych założeń, postanowiono, że atakujące oddziały same będą musiały zdobyć paliwo, aby być w stanie kontynuować natarcie. Z powodu wszystkich tych trudności data ataku została przesunięta ze środka października na 16 grudnia. 
+                                             Przed rozpoczęciem ofensywy alianci nie mieli prawie żadnych wiadomości o ruchu wojsk nieprzyjaciela. W czasie wyzwalania Francji, jednym ze źródeł informacji na temat ruchów wojsk niemieckich był francuski ruch oporu, ale teraz gdy wojska alianckie stały już u wrót Rzeszy straciły to źródło. Gdy armia niemiecka przebywała jeszcze na terenach przez nią okupowanych, większość rozkazów przekazywana była drogą radiową za pomocą maszyny szyfrującej Enigma. Były one przechwytywane i rozkodowywane przez aliantów w ramach operacji „Ultra”. Na terenie Niemiec rozkazy były jednak przekazywane przez telefon, co pozbawiło aliantów i tego źródła wywiadowczego. Jesienna, mglista pogoda uniemożliwiła także wiele lotów rozpoznawczych, które mogłyby wykryć przemieszczanie wojsk niemieckich. <br>
+                                             Omar Bradley, dowódca wojsk amerykańskich uznał, że Ardeny to cichy sektor na linii frontu i bazując na niepełnych danych wywiadu uznał, iż Niemcy nie są w stanie przeprowadzić żadnej operacji ofensywnej w tej fazie wojny. Rejon Ardenów broniony był przez zaledwie kilka jednostek amerykańskich, zarówno bardzo „zielonych” i niedoświadczonych (99. i 106. dywizja piechoty), jak i przez doświadczonych weteranów (2. dywizja piechoty) wysłanych do Ardenów na wypoczynek. 
+                                             Niemcy zaplanowali dwie dodatkowe operacje specjalne, które miały się odbyć przed samą ofensywą, jak i w czasie jej trwania. Otto Skorzeny, dowódca niemieckich komandosów, wsławiony brawurową operacją uwolnienia Mussoliniego, miał poprowadzić operację „Greif”. Żołnierze niemieccy znający język angielski i przebrani w mundury amerykańskie mieli infiltrować tyły nieprzyjaciela, zmieniać znaki drogowe, kierować ruch w nieodpowiednie miejsca i tworzyć maksymalne zamieszanie, a także w miarę możliwości uchwycić mosty na Mozie pomiędzy Liège a Namur. Druga operacja specjalna, to dowodzona przez Friedricha Augusta von der Heydte’a operacja „Stösser”, której zadaniem było zajęcie ważnego skrzyżowania przy Malmedy. <br>
+                                             Wywiad niemiecki ustalił, że radziecka ofensywa na froncie wschodnim rozpocznie się 20 grudnia. Dowództwo niemieckie miało nadzieję, że Stalin opóźni tę operację czekając na to jak się skończy bitwa w Ardenach. <br>
+                                             16 grudnia 1944 roku o godzinie 5.30 rano potężne przygotowanie artyleryjskie 2000 armat skierowane na pozycje amerykańskich żołnierzy znajdujące się przed 6 Armią Pancerną SS zapoczątkowało niemiecki atak. O godzinie 8.00 trzy niemieckie armie runęły do ataku przez zalesione stoki Ardenów. W sektorze północnym 6 Armia Pancerna SS Dietricha zaczęła się przebijać w kierunku Liège, w sektorze środkowym 5 Armia Pancerna von Manteuffela zaatakowała w kierunku Bastogne i Sankt Vith – zdobycie tych miast i związanych z nimi węzłów komunikacyjnych miało pierwszorzędne znaczenie dla powodzenia niemieckiego ataku. Na południu 7 Armia Brandenbergera ruszyła w kierunku Luksemburga mając za zadanie zabezpieczenie tego skrzydła frontu przed kontratakiem aliantów. <br>
+                                             W czasie pierwszej fazy ataku Niemcy zastosowali taktykę, którą wcześniej przeciwko nim użyli Rosjanie na froncie wschodnim. Pierwsza fala ataku składała się głównie z oddziałów piechoty, których zadaniem było otwarcie drogi dla oddziałów pancernych i zmotoryzowanych. Całkowicie zaskoczeni atakiem Amerykanie nie stawiali na początku zbyt dużego oporu i Niemcy wzięli wielu jeńców, jednak obrońcy dość szybko otrząsnęli się z szoku i pozostałe oddziały amerykańskie, ku dużemu zaskoczeniu Niemców, zaczęły stawiać coraz większy opór, opóźniając plan niemieckiego ataku. <br>
+                                             Pierwsza fala piechoty 6 Armii Pancernej SS nie przełamała zdeterminowanej obrony amerykańskiej 2 Dywizji Piechoty, zmuszając Dietricha do wcześniejszego niż zaplanowano użycia jednostek pancernych. Zła pogoda, na którą tak liczyli Niemcy, uniemożliwiła aliantom użycie lotnictwa, ale z drugiej strony warunki meteorologiczne były dużo gorsze niż Niemcy zakładali i niespodziewane, duże opady śniegu połączone z burzami śnieżnymi sprawiły, że wiele dróg stało się nieprzejezdnych, co znacząco spowolniło tempo niemieckiego ataku. 
+                                             Lepiej wiodło się Niemcom w środkowej strefie ataku gdzie przełamali obronę 106. Dywizji Piechoty nazywanej „Golden Lion”. W tym sektorze atak przyniósł największe sukcesy, bowiem amerykańska 106 Dywizja Piechoty, podobnie jak 99 Dywizja Piechoty również tutaj stacjonująca, były złożone z samych nowicjuszy, którzy nie mieli żadnego doświadczenia w walce. Dowódca 106 DP, 52-letni Alan Jones nie wytrzymując stresowej sytuacji z atakiem serca trafił do szpitala, a dwa pułki 106 DP zostały całkowicie odcięte od sił amerykańskich. Nie mając żadnych szans na odsiecz, dowódcy poszczególnych oddziałów decydowali o kapitulacji. Do zobrazowania panującej w tamtym czasie ponurej atmosfery w szeregach amerykańskich pułków piechoty 422. i 423. niech posłużą słowa pułkownika Descheneaux’a skierowane do swoich podkomendnych: „czeka nas rzeź, nie wierzę w walkę wyłącznie dla chwały, jeżeli poza tym nie może ona osiągnąć niczego więcej. Uważam, że musimy zaprzestać oporu. Postanowiłem ocalić tylu ludzi ilu tylko się da”. Na skutek poddania się dwóch pułków 106 DP, do niewoli dostało się blisko 6000 żołnierzy. <br>
+                                             Hitler sądził, że Dwight D. Eisenhower będzie potrzebował przynajmniej dwóch do trzech dni, aby się zorientować, że nie jest to lokalny kontratak, ale ofensywa na dużą skalę. Pomylił się jednak. Eisenhower już w pierwszym dniu kampanii zdał sobie sprawę z tego co się dzieje i rozkazał aby „Red Ball Express” zaczął przemieszczać żołnierzy w rejon walk. W ciągu tygodnia przerzucono prawie ćwierć miliona żołnierzy. W tym samym czasie 101. Dywizja Powietrznodesantowa i elementy 10 Dywizji Pancernej zostały przesunięte do Bastogne i otrzymały rozkaz utrzymania tego rejonu za wszelką cenę. <br><br>
+                                             <b>Konferencja w Verdun</b><br><br>
+                                             Ze wszystkich dowódców biorących udział w tej naradzie jedynie Eisenhower i Patton zdawali sobie sprawę, że niemiecki atak dał wspaniałą okazję na zniszczenie najlepszych sił wroga. Eisenhower zaczął naradę mówiąc, że obecna sytuacja powinna być widziana nie jako katastrofa, ale jako sposobność i widząc zmartwione twarze dodał, że chce widzieć tylko uśmiechy wokół stołu. Patton, który podzielał to zdanie dodał: „Do diabła, pokażmy, że mamy jaja i dajmy im dojść aż do Paryża, dopiero wtedy ich odetniemy i przeżujemy”. 
+                                             Eisenhower zapytał następnie Pattona ile czasu jego armia (która znajdowała się w południowo-centralnej Francji i atakowała w kierunku wschodnim) będzie potrzebowała aby przygotować kontratak. Patton stwierdził, że zaatakuje wroga w ciągu 48 godzin, co spotkało się z niedowierzaniem innych generałów. Historyk wojskowości i jeden z biografów Pattona napisał, że był to „najlepszy” moment w życiu Pattona. Inni przybyli na konferencję bez żadnych planów i jedynie z mglistymi pomysłami co robić, a Patton nie tylko miał już gotowe plany, ale rozkazał aby 3 Armia skręciła w kierunku północnym jeszcze przed przybyciem na konferencję. Tak więc, kiedy dyskutowano co robić, jego żołnierze byli już w drodze. <br><br>
+                                             <b>Bastogne</b><br><br>
+                                             Do 21 grudnia Niemcy dowodzeni przez gen. Heinricha von Lüttwitza całkowicie okrążyli Bastogne, które było bronione przez 101. Dywizję Powietrznodesantową oraz niedobitki 106. i 28. Dywizji Piechoty, które utworzyły jednostkę w sile batalionu o nazwie „Team SNAFU”. 101. Dywizję Powietrznodesantową rzucono tutaj wprost z urlopu, na jakim była po 72 dniach walk, w których straciła ponad 50% składu. Warunki obrońców były niezmiernie trudne, większość zaopatrzenia medycznego i personelu lekarskiego wpadło w ręce Niemców. Na przysłanym przez Niemców dokumencie z propozycją honorowej kapitulacji generał Anthony McAuliffe będący dowódcą 101. DPD napisał w odpowiedzi jedno słowo – nuts (w tym wypadku bzdura). Alianci zaopatrywali od 22 grudnia Bastogne z powietrza (operacja „Repulse”) przy pomocy transportowców C-47 Dakota. Pomimo silnych niemieckich ataków linie obrońców nie zostały przełamane, a 26 grudnia 1944 roku do miasta dotarły pierwsze jednostki idącej z odsieczą 4 Dywizji Pancernej z 3 Armii gen. G. Pattona. Patton postawił swoją stopę w Bastogne w dniu 30 grudnia 1944 roku. W trakcie walk o to miasto, będąca pod ciągłym ostrzałem artyleryjskim i stale bombardowana 101. Dywizja Powietrznodesantowa straciła 1641 żołnierzy. 
+                                             Niepowodzenie Niemców może być częściowo wytłumaczone taktyką, jaką przyjęli. Zamiast jednego zdecydowanego ataku na całej długości frontu, Niemcy wyprowadzili serię ataków w kilku miejscach, ale nierównocześnie, dzięki czemu obrońcy mieli możliwość szybkiego przerzucania sił w celu odparcia atakujących, a siły niemieckie ulegały rozproszeniu. <br><br>
+                                             <b>Kontrofensywa aliantów</b><br><br>
+                                             Niemcom nie udało się dotrzeć do zamierzonych celów ataku
+                                             23 grudnia pogoda poprawiła się na tyle, że po raz pierwszy od początku bitwy wystartowały samoloty sprzymierzonych. Lotnictwo alianckie wykonało w tym dniu wiele ataków na linie zaopatrzeniowe i komunikacyjne wroga, a także na maszerujące kolumny wojska. Zrzucono również zaopatrzenie dla obrońców Bastogne, wylądował tam nawet szybowiec z grupą lekarzy którzy się zgłosili na ochotnika do tej niebezpiecznej misji. <br>
+                                             Do 24 grudnia niemiecka ofensywa praktycznie załamała się. Niemcy nie dotarli nawet do pierwszego jej celu jakim była rzeka Moza. Nie udało im się także zdobyć dużych ilości paliwa jak zaplanowano. Pomimo że straty, szczególnie w czołgach, były do tej pory minimalne, generał von Manteuffel zarekomendował zakończenie operacji i wycofanie sił niemieckich za linię Zygfryda. Hitler odrzucił tę propozycję. <br>
+                                             3 Armia Pattona zbliżała się już w tym czasie do Bastogne. O godzinie 16.50 26 grudnia pierwsze oddziały 4 Dywizji Pancernej wkroczyły do oblężonego miasta. <br><br>
+                                             <b>Niemiecki kontratak</b><br><br>
+                                             1 stycznia 1945 roku armia niemiecka rozpoczęła dwie nowe operacje licząc na wznowienie ofensywy. Pierwsza z nich to operacja „Bodenplatte” – masowe uderzenie Luftwaffe skierowane na lotniska alianckie w Belgii i Holandii. Setki niemieckich samolotów zniszczyły lub poważnie uszkodziły około 465 alianckich samolotów, jednak samo Luftwaffe straciło 277 własnych samolotów – 62 zostały zestrzelone przez myśliwce, a 172 padły ofiarą silnego ognia artylerii przeciwlotniczej zgromadzonej do zwalczania pocisków V-1. O ile aliantom uzupełnienie strat w samolotach zajęło tylko kilka dni, to Luftwaffe już do końca wojny nie otrząsnęła się z poniesionych strat. 
+                                             W tym samym dniu niemiecka armia rozpoczęła operację „Nordwind” – atak w rejonie Alzacji, mający odciągnąć uwagę aliantów od głównej operacji w Ardenach. Po dwóch dniach ciężkich walk wojska amerykańskie straciły ponad 11 000 żołnierzy i wycofały się, ale atakująca armia niemiecka poniosła znacznie większe straty – około 23 000 żołnierzy. <br><br>
+                                             <b>Ostateczne zwycięstwo sprzymierzonych</b><br><br>
+                                             Niemiecka ofensywa została powstrzymana, ale na linii frontu nadal pozostawało niebezpieczne dla aliantów „wybrzuszenie”, z którego w każdej chwili mogły zaatakować niemieckie czołgi. <br>
+                                             Atak mający wyrównać linię frontu wyznaczono na 1 stycznia. 3 Armia Pattona miała uderzyć w kierunku północnym z rejonu Bastogne, a brytyjskie siły Montgomery’ego miały posuwać się w kierunku południowym, miejsce spotkania wyznaczono w miasteczku Houffalize. 
+                                             Przed rozpoczęciem alianckiej ofensywy, armię brytyjską od amerykańskiej dzieliło około 40 km. Amerykański atak na południu posuwał się bardzo powoli, około 1 km dziennie. Armia niemiecka prowadziła skutecznie działania opóźniające starając się wycofać jak najwięcej czołgów i artylerii. Mimo tych starań z powodu braku paliwa większość sprzętu i tak została porzucona. <br>
+                                             7 stycznia Hitler zgodził się wreszcie na wycofanie sił niemieckich z Ardenów, włącznie z elitarnymi formacjami SS kończąc w ten sposób wszystkie operacje ofensywne. Natarcie w Ardenach zakończyło się i wszystko co pozostało do zrobienia z punktu widzenia aliantów, to oczyszczenie obszaru niemieckiego ataku z pozostałych tam maruderów. 
+                                             „Bitwa o wybrzuszenie” zakończyła się ostatecznie 15 stycznia, kiedy siły 3 Armii połączyły się z 1. i 9. Armią amerykańską. W zamkniętym przez te armie kotle nie było już 5 Armii Pancernej, która w sposób wzorowy, hamując natarcie aliantów, zdołała się wycofać na Linię Zygfryda. <br>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card">
+                                    <div class="card-header" id="headingSecondTwo">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseSecondTwo" aria-expanded="false" aria-controls="collapseSecondTwo">
+                                          Strony konfliktu, siły i straty
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseSecondTwo" class="collapse" aria-labelledby="headingSecondTwo" data-parent="#accordionSecond">
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card-body">
+                                                   <img src="../zdjecia/rzesza.png" class="img-fluid  rounded mx-auto d-block" alt="...">
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card-body">
+                                                   <img src="../zdjecia/ENG.png" class="img-fluid  rounded mx-auto " alt="...">
+                                                   <img src="../zdjecia/US.png" class="img-fluid  rounded mx-auto " alt="...">
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Na początku bitwy:</b><br>
+                                                         -ok. 200 000 – 500 000 ludzi <br>
+                                                         -1800 czołgów <br>
+                                                         -1900 dział <br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Na początku bitwy:</b><br>
+                                                         -ok. 840 000 ludzi,<br>
+                                                         -1300 czołgów i niszczycieli czołgów<br>
+                                                         -394 działa. <br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                       <div class="card-body">
+                                          <div class="row">
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Niemieckie:</b><br>
+                                                         -15 652 zabitych,<br>
+                                                         -27 582 zaginionych lub pojmanych,<br>
+                                                         -41 600 rannych. <br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                             <div class="col-sm-6">
+                                                <div class="card">
+                                                   <div class="card-body">
+                                                      <p class="card-text">
+                                                         <b>Amerykańskie i Brytyjskie:</b><br>
+                                                         -19 276 zabitych,<br>
+                                                         -23 218 zaginionych lub pojmanych,<br>
+                                                         -47 493 rannych.<br>
+                                                      </p>
+                                                   </div>
+                                                </div>
+                                             </div>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                                 <div class="card">
+                                    <div class="card-header" id="headingSecondThree">
+                                       <h2 class="mb-0">
+                                          <button class="btn btn-link text-secondary collapsed" type="button" data-toggle="collapse" data-target="#collapseSecondThree" aria-expanded="false" aria-controls="collapseSecondThree">
+                                          Następstwa i skutki
+                                          </button>
+                                       </h2>
+                                    </div>
+                                    <div id="collapseSecondThree" class="collapse" aria-labelledby="headingSecondThree" data-parent="#accordionSecond">
+                                       <div class="card-body">
+                                          <div class="text-left">
+                                             <b>Skutki bitwy</b><br><br>
+                                             Dokładne straty po obu stronach są niemożliwe do oszacowania. W zależności od źródeł określa się je na pomiędzy 70 a 81 tysięcy zabitych i zaginionych żołnierzy amerykańskich i około 1400 brytyjskich oraz pomiędzy 60 a 140 tysięcy zabitych i zaginionych Niemców.<br>
+                                             W ostatecznym rozrachunku bilans operacji „Wacht am Rhein” był dla strony niemieckiej wyjątkowo negatywny. Ze względu na wyniszczenie przemysłu oraz potencjału biologicznego Niemiec na tym etapie wojny III Rzesza miała tylko znikomą teoretyczną szansę zmiany przebiegu wojny. Siły zbrojne III Rzeszy tylko dzięki zaskoczeniu i złej pogodzie, która uziemiła alianckie lotnictwo, były w stanie uzyskać chwilową przewagę na froncie, gdy stracili oba te atuty, przegrana była już tylko kwestią czasu. Siły zbrojne III Rzeszy straciły ostatecznie jakąkolwiek inicjatywę operacyjną na froncie zachodnim, a straty w sprzęcie i żołnierzach, którzy mogliby zostać użyci do obsadzenia linii Zygfryda spowodowały, że następna ofensywa aliantów była znacznie ułatwiona. Wielu wyższych oficerów Wehrmachtu, a także szeregowych żołnierzy ostatecznie straciło motywację do walki z aliantami, którą w świetle nieuchronnie nadciągającej klęski uważali za bezcelową. W trakcie dalszych walk na zachodnim froncie coraz częściej to sfanatyzowani nastoletni SS-mani i członkowie Volkssturmu musieli wziąć na siebie ciężar walki z aliantami.<br>
+                                             Jednym z symboli walk pod Ardenami są niemieckie czołgi w tym PzKpfw VI B Königstiger, z których więcej zostało zniszczonych przez ich załogi z powodu braku paliwa, części zamiennych lub pomocy technicznej niż przez wojska alianckie. <br>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br>
+      </main>
+      <footer class="footer mt-auto py-3">
+         <div class="container">
+            <div class="d-flex justify-content-between">
+               <div class="p-2 bd-highlight"><a href="czolgi.html" style="text-decoration: none;" class="text-secondary"><- Powrót</a></div>
+               <div class="p-2 bd-highlight">War Tanks - projekt zaliczeniowy Multimedia rok 2018/2019 Lipiński Mateusz</div>
+               <div class="p-2 bd-highlight"><a href="ciekawostki.html" style="text-decoration: none;" class="text-secondary">Następna strona -></a></div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
+
