@@ -1,0 +1,416 @@
+
+
+<!doctype html>
+<html lang="en" class="h-100">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>War Tanks</title>
+      <!-- Bootstrap core CSS -->
+      <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Custom styles for this template -->
+      <link href="../css/sticky-footer.css" rel="stylesheet">
+      <link href="../css/carousel.css" rel="stylesheet">
+   </head>
+
+   <body class="d-flex flex-column h-100">
+      <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+         <a class="navbar-brand" href="../index.html">War Tanks</a>
+      </nav>
+   </header>
+      <main role="main">
+	  
+         <div class="container marketing">
+         <br>
+		                <audio id="true_file">
+                  <source src="../muzyka/prawda.mp3" type="audio/mpeg">
+               </audio>
+			                  <audio id="false_file">
+                  <source src="../muzyka/falsz.mp3" type="audio/mpeg">
+               </audio>
+			   
+         <div class="card text-center">
+            <b><br>Jaki czołg znajduje się na obrazku?</b><br>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_pz4.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt1" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn1_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad1_1()">Pz kpfw VI - Tiger</button></li>
+                        <li class="list-group-item border border-white">  <button id="btn1_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad1_2()">M26 Pershing</button></li>
+                        <li class="list-group-item border border-white">  <button id="btn1_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good1()">Pz kpfw 4</button></li>
+                        <li class="list-group-item border border-white">  <button id="btn1_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad1_3()">T-34</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+			   
+			     
+                  function playTrue() { 
+                   var x = document.getElementById("true_file"); 
+                    x.play(); 
+                  } 
+				    function playFalse() { 
+                   var x = document.getElementById("false_file"); 
+                    x.play(); 
+                  } 
+			   
+			   
+                  function Good1() {
+                    document.getElementById("pyt1").className = "alert alert-success";
+                    document.getElementById("btn1_3").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt1").innerHTML = "Poprawna odpowiedź!"
+                    document.getElementById("btn1_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn1_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn1_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad1_1() {
+                    document.getElementById("pyt1").className = "alert alert-danger";
+                    document.getElementById("btn1_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt1").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad1_2() {
+                    document.getElementById("pyt1").className = "alert alert-danger";
+                    document.getElementById("btn1_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt1").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad1_3() {
+                    document.getElementById("pyt1").className = "alert alert-danger";
+                    document.getElementById("btn1_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt1").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_m4.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt2" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn2_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good2()">M4 Sherman</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn2_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad2_1()">M26 Pershing</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn2_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad2_2()">Pz kpfw VIII Maus</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn2_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad2_3()">IS - 3</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good2() {
+                    document.getElementById("pyt2").className = "alert alert-success";
+                    document.getElementById("btn2_1").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt2").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn2_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn2_3").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn2_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad2_1() {
+                    document.getElementById("pyt2").className = "alert alert-danger";
+                    document.getElementById("btn2_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt2").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad2_2() {
+                    document.getElementById("pyt2").className = "alert alert-danger";
+                    document.getElementById("btn2_3").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt2").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad2_3() {
+                    document.getElementById("pyt2").className = "alert alert-danger";
+                    document.getElementById("btn2_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt2").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_tygrys.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt3" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn3_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad3_1()">Pz 38.t</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn3_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad3_2()">T- 34</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn3_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad3_3()">Pz kpfw Panther</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn3_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good3()">Pz kpfw VI Tiger</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good3() {
+                    document.getElementById("pyt3").className = "alert alert-success";
+                    document.getElementById("btn3_4").className = "btn btn-lg btn-outline-success  btn-block";  
+                    document.getElementById("pyt3").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn3_1").className = "btn btn-lg btn-outline-danger  btn-block";
+                    document.getElementById("btn3_2").className = "btn btn-lg btn-outline-danger  btn-block";
+                    document.getElementById("btn3_3").className = "btn btn-lg btn-outline-danger  btn-block";
+					playTrue();
+                  }
+                  function Bad3_1() {
+                    document.getElementById("pyt3").className = "alert alert-danger";
+                    document.getElementById("btn3_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt3").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad3_2() {
+                    document.getElementById("pyt3").className = "alert alert-danger";
+                    document.getElementById("btn3_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt3").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad3_3() {
+                    document.getElementById("pyt3").className = "alert alert-danger";
+                    document.getElementById("btn3_3").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt3").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_pers.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt4" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn4_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad4_1()">T - 29</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn4_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad4_2()">T - 32</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn4_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good4()">M26 Pershing</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn4_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad4_3()">Sherman Jumbo</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good4() {
+                    document.getElementById("pyt4").className = "alert alert-success";
+                    document.getElementById("btn4_3").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt4").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn4_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn4_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn4_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad4_1() {
+                    document.getElementById("pyt4").className = "alert alert-danger";
+                    document.getElementById("btn4_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt4").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad4_2() {
+                    document.getElementById("pyt4").className = "alert alert-danger";
+                    document.getElementById("btn4_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt4").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad4_3() {
+                    document.getElementById("pyt4").className = "alert alert-danger";
+                    document.getElementById("btn4_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt4").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_is2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt5" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn5_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad5_1()">IS - 4</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn5_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good5()">IS - 2</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn5_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad5_2()">Obj 279</button></li>
+                        <li class="list-group-item border border-white"><button id="btn5_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad5_3()">IS - 1</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good5() {
+                    document.getElementById("pyt5").className = "alert alert-success";
+                    document.getElementById("btn5_2").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt5").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn5_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn5_3").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn5_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad5_1() {
+                    document.getElementById("pyt5").className = "alert alert-danger";
+                    document.getElementById("btn5_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt5").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad5_2() {
+                    document.getElementById("pyt5").className = "alert alert-danger";
+                    document.getElementById("btn5_3").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt5").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad5_3() {
+                    document.getElementById("pyt5").className = "alert alert-danger";
+                    document.getElementById("btn5_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt5").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_t3485.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt6" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn6_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad6_1()">t - 28</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn6_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad6_2()">E50</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn6_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good6()">t34/85</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn6_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad6_3()">KW - 3</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good6() {
+                    document.getElementById("pyt6").className = "alert alert-success";
+                    document.getElementById("btn6_3").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt6").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn6_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn6_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn6_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad6_1() {
+                    document.getElementById("pyt6").className = "alert alert-danger";
+                    document.getElementById("btn6_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt6").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad6_2() {
+                    document.getElementById("pyt6").className = "alert alert-danger";
+                    document.getElementById("btn6_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt6").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad6_3() {
+                    document.getElementById("pyt6").className = "alert alert-danger";
+                    document.getElementById("btn6_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt6").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_panther.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt7" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn7_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad7_1()">E - 100</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn7_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad7_2()">Pz kpfw 4</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn7_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good7()">Pz kpfw Panther</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn7_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad7_3()">Obj 261</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good7() {
+                    document.getElementById("pyt7").className = "alert alert-success";
+                    document.getElementById("btn7_3").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt7").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn7_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn7_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn7_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad7_1() {
+                    document.getElementById("pyt7").className = "alert alert-danger";
+                    document.getElementById("btn7_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt7").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad7_2() {
+                    document.getElementById("pyt7").className = "alert alert-danger";
+                    document.getElementById("btn7_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt7").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad7_3() {
+                    document.getElementById("pyt7").className = "alert alert-danger";
+                    document.getElementById("btn7_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt7").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+            <div class="card-body">
+               <p class="card-text"></p>
+               <img src="../zdjecia/quiz_kw1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+               <div id="pyt8" role="alert">
+               </div>
+               <div class="d-flex justify-content-around">
+                  <div class="btn-group" role="group" aria-label="Basic example">
+                     <ul class="list-group list-group-horizontal-lg border border-white">
+                        <li class="list-group-item border border-white"> <button id="btn8_1" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad8_1()">IS - 4</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn8_2" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad8_2()">KW - 4</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn8_3" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Good8()">Kw - 1</button></li>
+                        <li class="list-group-item border border-white"> <button id="btn8_4" type="button" class="btn btn-lg btn-outline-secondary btn-block" onclick="Bad8_3()">T - 10</button></li>
+                     </ul>
+                  </div>
+               </div>
+               <script>
+                  function Good8() {
+                    document.getElementById("pyt8").className = "alert alert-success";
+                    document.getElementById("btn8_3").className = "btn btn-lg btn-outline-success btn-block";  
+                    document.getElementById("pyt8").innerHTML = "Poprawna odpowiedź!";
+                    document.getElementById("btn8_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn8_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("btn8_4").className = "btn btn-lg btn-outline-danger btn-block";
+					playTrue();
+                  }
+                  function Bad8_1() {
+                    document.getElementById("pyt8").className = "alert alert-danger";
+                    document.getElementById("btn8_1").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt8").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+                  function Bad8_2() {
+                    document.getElementById("pyt8").className = "alert alert-danger";
+                    document.getElementById("btn8_2").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt8").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }function Bad8_3() {
+                    document.getElementById("pyt8").className = "alert alert-danger";
+                    document.getElementById("btn8_4").className = "btn btn-lg btn-outline-danger btn-block";
+                    document.getElementById("pyt8").innerHTML = "Spróbuj jeszcze raz!";
+					playFalse();
+                  }
+               </script>
+            </div>
+         </div>
+         <br>
+      </main>
+      <footer class="footer mt-auto py-3">
+         <div class="container">
+            <div class="d-flex justify-content-between">
+               <div class="p-2 bd-highlight"><a href="ciekawostki.html" style="text-decoration: none;" class="text-secondary"><- Powrót</a></div>
+               <div class="p-2 bd-highlight">War Tanks - projekt zaliczeniowy Multimedia rok 2018/2019 Lipiński Mateusz</div>
+               <div class="p-2 bd-highlight"><a href="../index.html" style="text-decoration: none;" class="text-secondary">Następna strona -></a></div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
+
