@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en" class="h-100">
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      <title>War Tanks</title>
+      <!-- Bootstrap core CSS -->
+      <link href="../css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+      <!-- Custom styles for this template -->
+      <link href="../css/sticky-footer.css" rel="stylesheet">
+      <link href="../css/carousel.css" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <style>
+	           .slider {
+         -webkit-appearance: none;
+         width: 100%;
+         height: 15px;
+         border-radius: 5px;  
+         background: #ffffff;
+         outline: none;
+         opacity: 0.7;
+         -webkit-transition: .2s;
+         transition: opacity .2s;
+         }
+         .slider::-webkit-slider-thumb {
+         -webkit-appearance: none;
+         appearance: none;
+         width: 25px;
+         height: 25px;
+         border-radius: 50%; 
+         background: #ffffff;
+         cursor: pointer;
+         }
+         .slider::-moz-range-thumb {
+         width: 25px;
+         height: 25px;
+         border-radius: 50%;
+         background: #343a40;
+         cursor: pointer;
+         }
+	  
+	  </style>
+   </head>
+   <body class="d-flex flex-column h-100" onload="playAudio()">
+   
+ 
+      <header>
+         <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="../index.html">War Tanks</a>
+            <div class="navbar-nav mr-auto">
+            </div>
+            <div class="form-inline">
+               <audio id="myAudio">
+                  <source src="../muzyka/overlord.mp3" type="audio/mpeg">
+               </audio>
+               <form class="form-inline mt-2 mt-md-0">
+                  <i class="material-icons text-white" id="wlacz" onclick = "zmienStan()">volume_up</i>
+                  <i class="material-icons text-white" id="status" onclick = "zmienStatus()">pause_circle_outline</i>
+                  <div class="slidecontainer">
+                     <input type="range" min="1" max="100" value="50" class="slider" id="myRange" onmousemove="zmienAudio()">
+                  </div>
+               </form>
+               <script>
+                  function zmienAudio()
+                  {
+                  	var slider = document.getElementById("myRange").value/100;
+                  
+                  	x.volume = slider;
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  	
+                  }
+                  	 
+                  var x = document.getElementById("myAudio"); 
+                  function playAudio() { 
+                  
+                    x.play(); 
+                  } 
+                  
+                  function zmienStatus(){
+                  
+                  	if (x.duration > 0 && !x.paused) {
+                  
+                      x.pause();
+                  	document.getElementById("status").innerHTML = "play_circle_outline";
+                  
+                  } else {
+                  
+                      x.play();
+                  	document.getElementById("status").innerHTML = "pause_circle_outline";
+                  	
+                  
+                  }
+                  }
+                  
+                  function zmienStan(){
+                  
+                  	if (x.volume >0) {
+                  
+                      x.volume = 0;
+                  	document.getElementById("wlacz").innerHTML = "volume_off";
+                  
+                  } else {
+                  
+                  	zmienAudio();
+                  	document.getElementById("wlacz").innerHTML = "volume_up";
+                  
+                  }
+                  }
+                  
+                  
+                  
+                  
+                  
+                                 
+               </script>
+            </div>
+         </nav>
+      </header>
+   
+   
+   
+      <main role="main">
+         <div class="container marketing">
+            <br>
+            <div class="card text-center">
+               <b><br>Panzerkampfwagen VIII Maus</b><br>
+               <div class="card-body">
+                  <p class="card-text"></p>
+                  <img src="../zdjecia/maus_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                  <div class="text-left">
+                     <b>Maus</b> – czołg superciężki konstrukcji niemieckiej z okresu II wojny światowej, nazywany Panzerkampfwagen VIII
+                     Pojazd miał osiągać prędkość do 20 km/h, posiadać zasięg 193 km przy zużyciu 1400 l paliwa na 100 km.<br>
+                     <b>Uzbrojenie</b><br>
+                     Jednym z głównych wymagań dla projektu VK 100.01 był zapas amunicji wynoszący 100 szt. do głównego uzbrojenia.<br>
+                     Ostatecznie masa pojazdu wynosiła 188 ton, uzbrojenie stanowiła armata kalibru 128mm KwK 44 L/55 z zapasem 68 pocisków i sprzężona z nią armata kalibru 75mm KwK 44 L/36.5 z zapasem 200 pocisków oraz karabin maszynowy MG 34 kalibru 7,92 mm z zapasem 1000 pocisków.<br>
+                     Głowna armata miała siłę ognia zdolną do przebicia czołowego pancerza takich czołgów jak Sherman, Cromwell, Churchill, T-34/85 czy IS-2 nawet z odległości 3500 metrów.<br>
+                     <b>Pancerz </b><br>
+                     Kadłub wykonany ze stalowych płyt pancernych miał w swej frontowej części grubość 240 mm, grubość pancerza była bardzo zróżnicowana, lecz czołg w razie wprowadzenia do produkcji byłby najbardziej opancerzonym pojazdem III Rzeszy. Jego pancerz miał następujące parametry: <br>
+                  </div>
+                  <br>
+                  <div class="container">
+                     <br>
+                     <img src="../zdjecia/maus_duzy_2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                     <br>
+                     <img src="../zdjecia/maus_duzy_3.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>					 
+                     <hr class="featurette-divider">
+                     <hr class="featurette-divider">
+                     <b>Obiekt 279</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/obiekt_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <div class="text-left">
+                           <b>Obiekt 279</b> - radziecki eksperymentalny czołg ciężki zbudowany w 1959 roku. 
+                           Ten niezwykły pojazd posiadał 4 gąsienice osadzone na dwóch podłużnych, pustych belkach, które były również wykorzystane jako zbiorniki paliwa. Posiadał hydro-pneumatyczne zawieszenie i 3 stopniową przekładnię planetarną. Jednostkowy nacisk pojazdu na podłoże nie przekraczał 0.6 kg/cm². Konstrukcja zawieszenia umożliwiała pokonywanie przeszkód takich jak bagna, głęboki śnieg czy zapory przeciwczołgowe.<br>
+                           Czołg był wyposażony w potężny, 1000 konny silnik wysokoprężny 2DG-8M, pozwalający 60-tonowemu pojazdowi osiągnięcie prędkości 55 km/h, utrzymując zasięg na poziomie 300 km. Na wyposażeniu znajdował się automatyczny system gaśniczy.<br>
+                           <b>Pancerz</b><br>
+                           Kadłub czołgu w najgrubszym punkcie posiadał 269 mm pancerza oraz był pokryty cienką, eliptyczną powłoką chroniącą pojazd przed pociskami podkalibrowymi. Konstrukcja zapobiegała wywróceniu pojazdu przez falę uderzeniową w przypadku wybuchu jądrowego. Pancerz składał się ze stalowych struktur o nieregularnych kształtach, różnej grubości i pod różnym kątem nachylenia. Budowa pancerza miała przeciwdziałać pociskom HEAT.<br>
+                           Wieża w najgrubszym miejscu miała 319 mm pancerza, była zbudowana w podobny sposób jak kadłub. Również pierścień wieży był silnie opancerzony. Czołg zapewniał załodze ochronę chemiczną, biologiczną, radiologiczną i nuklearną.<br>
+                           <b>Uzbrojenie</b><br>
+                           Czołg był wyposażony w 130 mm, gwintowaną armatę M-65 wystrzeliwującą pociski APDS o kalibrze 125 mm z prędkością wylotową 1000 m/s, co umożliwiało 450 mm penetrację pancerza  pod kątem 90°. Dodatkowym uzbrojeniem był sprzężony 14.5 mm karabin maszynowy KPWT z zapasem 800 pocisków. Broń była stabilizowana w dwóch płaszczyznach za pomocą elektro-hydraulicznego stabilizatora „Burza”. Obiekt 279 posiadał na stanie amunicję w liczbie 40 sztuk, przy czym ładunek i pocisk były ładowane oddzielnie.<br>
+                           Armata była wyposażona w system półautomatycznego ładowania, pozwalający oddać 5-7 strzałów na minutę. System kontroli ognia składał się z optycznego dalmierza, auto-naprowadzania i noktowizora L2 z aktywnym reflektorem podczerwieni. <br>
+                        </div>
+                        <br>
+                        <img src="../zdjecia/obiekt_duzy_2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <br>
+                        <img src="../zdjecia/obiekt_duzy_3.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <hr class="featurette-divider">
+                     <b>T28</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/t28_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <div class="text-left">
+                           <b>T28</b> - największy czołg superciężki zaprojektowany dla potrzeb amerykańskiej armii w czasie II wojny światowej. 
+                           Pierwotnie planowano jego użycie przy forsowaniu Linii Zygfryda, w późniejszym okresie planowano jego wykorzystanie w czasie inwazji Japonii. <br>
+                           <b>Uzbrojenie</b><br>
+                           Nie posiadał wieży przez co miał stosunkowo niską sylwetkę i według standardowej terminologii był raczej działem pancernym, a nie czołgiem. Całkowita masa pojazdu miała wynosić 86 ton, a w porównaniu z innymi czołgami amerykańskimi tego okresu miał bardzo gruby pancerz (do 300 mm), co miało mu zapewnić ochronę nawet przed niemiecką armatą 88 mm. <br>
+                           Napęd zapewniał mu silnik spalinowy GAF V-8 o mocy jedynie 410 KM, co pozwalało mu na osiągnięcie prędkości zaledwie 14 km/h. Miał cztery gąsienice, zamiast tradycyjnych dwóch, dwie zewnętrzne mogły być zdejmowane w czasie transportu. <br> 
+                           Jego uzbrojenie główne stanowiła armata T5E1 o kalibrze 105 mm. <br>
+                           Planowano zbudować pięć prototypów, a następnie 25 egzemplarzy produkcyjnych, w rzeczywistości zbudowano jedynie dwa prototypy, z których żaden nie wziął udziału w walkach. <br> 
+                           <b>Pancerz</b><br>
+                           Kadłub wykonany z części grubości 250-300 mm, grubość pancerza była bardzo zróżnicowana. Przy takich parametrach czołg był praktycznie niezniszczalny przy frontowym starciu. <br>
+                        </div>
+                        <br>
+                        <img src="../zdjecia/t28_duzy_2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <br>
+                        <img src="../zdjecia/t28_duzy_3.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <hr class="featurette-divider">
+                     <b>Landkreuzer P-1000 Ratte</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/p1000_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <div class="text-left">
+                           <b>Landkreuzer P-1000 Ratte</b> - prototypowy czołg superciężki, przeznaczony dla sił zbrojnych III Rzeszy. Ważący 1000 ton P-1000 Ratte (w planach) byłby ponad 5 razy cięższy od największego wyprodukowanego kiedykolwiek czołgu. Zaprojektowany przez zakłady Friedrich Krupp AG w 1942 i zaaprobowany przez Adolfa Hitlera, został ostatecznie zarzucony na początku 1943.  <br>
+                           <b>Uzbrojenie i konstrukcja</b><br>
+                           Budowę czołgu rozpoczęto, ale nigdy jej nie dokończono. Pojazd miał być uzbrojony w dwa działa kalibru 280 mm zamontowane w wieży typu użytego także na pancernikach typu Scharnhorst. Jedna z tych wież została wyprodukowana przed ostatecznym zarzuceniem projektu, a następnie użyta w baterii dział nabrzeżnych w Norwegii. Czołg miał być również uzbrojony w pojedyncze działo 128 mm, osiem działek przeciwlotniczych Flak 38 kalibru 20 mm oraz dwa karabiny maszynowe MG 151/15 kalibru 15 mm. Po bokach czołgu miały znajdować się po 3 gąsienice o szerokości 1,2 metra. Napęd miały stanowić dwa 24-cylindrowe silniki MAN V12Z32/44 o mocy 8500 KM lub osiem 20 cylindrowych silników Daimler-Benz MB501 o mocy 2000 KM każdy, aby osiągnąć wymagane 16000 KM potrzebne do poruszenia pojazdu.<br>
+                           Ze względu na olbrzymią masę i wielkość „Szczura”, nie było możliwości praktycznego zastosowania tego typu czołgu – jego ciężar uniemożliwiałby pokonanie jakiegokolwiek mostu czy drogi, wielkość narażałaby na ataki lotnicze i miny, zaś w czasie operacji ofensywnych i podczas odwrotu byłby zbyt wolny. Jedynym możliwym wariantem użycia pojazdu byłoby wykorzystanie go jako ruchomej baterii nadbrzeżnej. Pojazd miałby poruszać się wzdłuż wybrzeża po specjalnie zbudowanym trakcie i zwalczać okręty przeciwnika, jednak w tej roli także byłby narażony na ataki lotnicze i miałby nikłe szanse w pojedynkach artyleryjskich z licznymi, uzbrojonymi w ciężkie działa okrętami przeciwnika. Jako że istotną cechą czołgu jest mobilność na bezdrożach, cały projekt nie miał uzasadnienia bojowego. <br>
+                        </div>
+                        <br>
+                        <img src="../zdjecia/p1000_duzy_2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <br>
+                        <img src="../zdjecia/p1000_duzy_3.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <hr class="featurette-divider">
+                     <b>Landkreuzer P. 1500 Monster</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/p1500_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                        <div class="text-left">
+                           <b>Landkreuzer P. 1500 Monster</b> - Projekt powstał w listopadzie 1942 r. w czasie prac nad 1000-tonowym modelem P-1000 Ratte. Czołg ten nie wyszedł z fazy projektu, gdyż już w 1943 roku projekt został zarzucony jednocześnie z P-1000, ze względu na koszty i porażki na froncie. W odróżnieniu od modelu P-1000 Ratte, do którego skonstruowano jedną wieżę, nigdy nie podjęto próby jego skonstruowania. Nieznane jest jego przeznaczenie, gdyż konstrukcja tak wielka byłaby zbyt wolna i narażona na ataki powietrzne oraz miny. Nie wzięto również pod uwagę problemów związanych z przeprawami przez rzeki – żaden ówczesny most nie był przygotowany na przejazd tak ciężkiego pojazdu. Nie można oszacować, jak wielką zużywałby ilość paliwa.   <br>
+                           <b>Uzbrojenie i konstrukcja</b><br>
+                           Czołg miał ważyć około 1500 ton i mieć długość około 42 m. Była to samobieżna wersja działa kolejowego Dora o kalibrze 800 mm. Projekt uzupełniony został dwoma działami 15 cm s.FH 18 i ośmioma, mogącymi służyć jako broń przeciwlotnicza, wielkokalibrowymi karabinami maszynowymi MG 151/15. <br>
+                           Jako napęd miały służyć 4 silniki Diesla służące dotychczas do napędzania U-Bootów. Załoga miała składać się z około 100 ludzi. Dodatkowo miał być wyposażony w 4 potężne wsporniki służące do rekompensowania siły odrzutu największego działa. Grubość pancerza miała się wahać od 220 mm do 360 mm na najważniejszych elementach. Największym problemem okazała się siła nacisku na podłoże, gdyż maszyna tych rozmiarów po prostu zapadłaby się. Ostatecznie rozwiązano tę kwestię poprzez zaplanowanie gąsienic o szerokości niewiele mniejszej niż szerokość podwozia.  <br>
+                        </div>
+                        <br>
+                        <img src="../zdjecia/p1500_duzy_2.png" class="img-fluid border border-secondary" alt="Responsive image" width="66%"><br><br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <b>Michael Wittmann</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/wittmann.png" class="img-fluid border border-secondary" alt="Responsive image" width="35%"><br><br>
+                        <div class="text-left">
+                           <b>Michael Wittmann</b> – niemiecki dowódca wojskowy, jeden z najskuteczniejszych czołgistów II wojny światowej.
+                           Na samym froncie wschodnim Wittmann zniszczył 119 radzieckich czołgów. Ogółem zalicza mu się zniszczenie 138 czołgów i 132 dział przeciwpancernych. <br>
+                           Za najbardziej spektakularną akcję Wittmanna uważa się zniszczenie 13 czerwca 1944 roku 21 pojazdów wroga w ciągu 20 minut. Zniszczone pojazdy, czyli czołgi, transportery opancerzone i ciężarówki należały do 4. Pułku Pancernego County of London Yeomanry. Wittmann dysponował tylko jednym czołgiem, Tygrysem, który po uszkodzeniu zdołał bezpiecznie opuścić i powrócić do własnej jednostki.  <br>
+                           Za swoje osiągnięcia otrzymał jedne z najwyższych wyróżnień m. in. Krzyż Żelazny oraz Krzyż Rycerski z Liśćmi Dębu i Mieczami.
+                        </div>
+                     </div>
+                     <hr class="featurette-divider">
+                     <b>Zinowiej Kołobanow</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/kolobanow_duzy_1.png" class="img-fluid border border-secondary" alt="Responsive image" width="50%"><br><br>
+                        <div class="text-left">
+                           <b>Zinowiej Kołobanow</b> –  radziecki as pancerny, weteran wojny zimowej oraz operacji Barbarossa.
+                           Na samym froncie wschodnim Wittmann zniszczył 119 radzieckich czołgów. Ogółem zalicza mu się zniszczenie 138 czołgów i 132 dział przeciwpancernych. <br>
+                           Za najbardziej spektakularną akcję Wittmanna uważa się zniszczenie 13 czerwca 1944 roku 21 pojazdów wroga w ciągu 20 minut. Zniszczone pojazdy, czyli czołgi, transportery opancerzone i ciężarówki należały do 4. Pułku Pancernego County of London Yeomanry. Wittmann dysponował tylko jednym czołgiem, Tygrysem, który po uszkodzeniu zdołał bezpiecznie opuścić i powrócić do własnej jednostki.  <br>
+                           Kołobanow zostal za swoje popisy odznaczony orderem czerwonego sztandaru. W czasie wojny dorobil sie jeszcze dwoch kolejnych orderow - jeszcze jednego sztandaru oraz czerwonej gwiazdy.<br>
+                        </div>
+                        <br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <b>Lafayette G. Pool</b><br>
+                     <div class="card-body">
+                        <p class="card-text"></p>
+                        <img src="../zdjecia/pool.png" class="img-fluid border border-secondary" alt="Responsive image" width="25%"><br><br>
+                        <div class="text-left">
+                           <b>Lafayette G. Pool</b> –  najlepszy amerykański as pancerny drugiej wojny światowej.
+                           Służył w amerykańskiej 3 Dywizji Pancernej, która brała udział desancie na Normandię (1944 r.). Dowodził czołgami Sherman (M4A1 i M4A1(76)W).<br>
+                           Szlak bojowy Lafayette’a G. Poola trwał jedynie 83 dni – w tym okresie na konto Amerykanina zapisano 258 pojazdów, w tym 12 czołgów (4 Pz.Kpfw. V „Panther”, pozostałe Pz.Kpfw. III i IV). Brał udział w 21 potyczkach pancernych. Ponadto przypisuje mu się zabicie ok. 1000 żołnierzy przeciwnika i wzięcie 250 do niewoli. Pool został odznaczony Krzyżem za Wybitną Służbę, Legią Zasługi, Srebrną Gwiazdą, Purpurowym Sercem, francuskim medalem Legii Honorowej oraz belgijskim Fourragère. <br>
+                        </div>
+                        <br>
+                     </div>
+                     <hr class="featurette-divider">
+                     <p class="text-center">
+                        Sprawdź swoją wiedzę! <br> <br>
+                        <a href="quiz.html" class="btn btn-lg btn-outline-secondary">Do Quizu!</a>
+                     </p>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <br>
+      </main>
+      <footer class="footer mt-auto py-3">
+         <div class="container">
+            <div class="d-flex justify-content-between">
+               <div class="p-2 bd-highlight"><a href="bitwy.html" style="text-decoration: none;" class="text-secondary"><- Powrót</a></div>
+               <div class="p-2 bd-highlight">War Tanks - projekt zaliczeniowy Multimedia rok 2018/2019 Lipiński Mateusz</div>
+               <div class="p-2 bd-highlight"><a href="../index.html" style="text-decoration: none;" class="text-secondary">Następna strona -></a></div>
+            </div>
+         </div>
+      </footer>
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+   </body>
+</html>
+
